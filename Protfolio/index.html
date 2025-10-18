@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sadvik | Portfolio</title>
+  <meta name="description" content="Yashwant Kumar | Full Stack Developer | Portfolio">
+  <meta name="keywords" content="Full Stack Developer, JavaScript, React, Portfolio, Web Development">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ===== Reset ===== */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    html {scroll-behavior: smooth;}
+    body {font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; transition: background 0.3s, color 0.3s; overflow-x: hidden;}
+
+    /* ===== Header ===== */
+    header {background: #0d6efd; color: #fff; padding: 15px 30px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;}
+    header h1 {font-size: 1.4rem;}
+    .header-right {display: flex; align-items: center; gap: 10px;}
+    nav ul {list-style: none; display: flex; flex-wrap: wrap; gap: 20px;}
+    nav ul li a {color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s;}
+    nav ul li a:hover, nav ul li a.active {color: #ffeb3b; border-bottom: 2px solid #ffeb3b; padding-bottom: 2px;}
+    .theme-toggle, .hamburger {cursor: pointer; font-size: 1.2rem; background: #fff; color: #0d6efd; border: none; border-radius: 5px; padding: 5px 10px; transition: all 0.3s;}
+    .hamburger {background: none; color: #fff; display: none;}
+
+    /* ===== Sections ===== */
+    section {padding: 60px 20px; max-width: 1100px; margin: auto; opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out;}
+    section.visible {opacity: 1; transform: translateY(0);}
+    section h2 {text-align: center; margin-bottom: 20px;}
+
+    /* ===== Hero ===== */
+    .hero {text-align: center; padding: 80px 20px; background: linear-gradient(to right, #0d6efd, #6610f2); color: #fff; border-radius: 10px;}
+    .hero img {width: 150px; height: 150px; border-radius: 50%; border: 4px solid #fff; margin-bottom: 15px; transition: transform 0.4s;}
+    .hero img:hover {transform: scale(1.1);}
+    .hero h2 {font-size: 2.2rem; margin-bottom: 10px;}
+    .typing {font-size: 1.1rem; font-weight: 500; color: #fff;}
+
+    /* ===== Skills ===== */
+    .skill {margin-bottom: 15px;}
+    .skill p {display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 5px;}
+    .progress {background: #e0e0e0; border-radius: 20px; overflow: hidden; height: 10px;}
+    .progress-bar {height: 100%; background: linear-gradient(90deg, #0d6efd, #6610f2); border-radius: 20px; transition: width 1s ease-in-out;}
+
+    /* ===== Projects ===== */
+    .projects {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
+    .card {background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, background 0.3s; cursor: pointer; position: relative;}
+    .card:hover {transform: translateY(-10px); background: #f0f8ff;}
+    .project-link {display: inline-block; margin-top: 10px; text-decoration: none; color: #0d6efd; font-weight: 600; transition: color 0.3s;}
+    .project-link:hover {color: #6610f2;}
+
+    /* ===== Education & Certifications ===== */
+    .edu-item {background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); display: flex; align-items: center; padding: 20px; margin: 20px auto; max-width: 900px; transition: transform 0.3s ease, box-shadow 0.3s;}
+    .edu-item:hover {transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.15);}
+    .edu-logo {width: 90px; height: 90px; object-fit: contain; border-radius: 10px; margin-right: 25px; border: 2px solid #0d6efd; background: #fff; padding: 5px; transition: transform 0.3s;}
+    .edu-item:hover .edu-logo {transform: scale(1.1);}
+    .edu-details {flex:1;}
+    .edu-details h3 {font-size: 1.2rem; color: #222; margin-bottom:5px;}
+    .edu-details h4 {font-size:1rem; color:#555; margin-bottom:8px; font-weight:500;}
+    .edu-meta {color:#777; font-size:0.9rem; margin-bottom:5px;}
+    .edu-meta span {margin-right:10px;}
+    .edu-score, .gpa {font-size:0.95rem; color:#0d6efd; font-weight:600;}
+
+    /* ===== Contact ===== */
+    form {display: flex; flex-direction: column; gap: 15px;}
+    input, textarea {padding: 12px; border:1px solid #ccc; border-radius:5px; width:100%; font-size:1rem;}
+    button {padding:12px; background:#0d6efd; border:none; color:#fff; font-size:1rem; border-radius:5px; cursor:pointer; transition: background 0.3s;}
+    button:hover {background:#0b5ed7;}
+
+    /* ===== Modal ===== */
+    .modal {display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:2000;}
+    .modal-content {background:#fff; padding:30px; border-radius:10px; width:90%; max-width:400px; text-align:center;}
+    .close-btn {background:red; color:#fff; padding:8px 15px; border:none; border-radius:5px; cursor:pointer;}
+
+    /* ===== Footer ===== */
+    footer {text-align:center; padding:20px; background:#0d6efd; color:#fff; margin-top:20px;}
+    footer a {color:#fff; margin:0 5px; transition: color 0.3s;}
+    footer a:hover {color:#ffeb3b;}
+
+    /* ===== Back to top button ===== */
+    #backToTop {position:fixed; bottom:20px; right:20px; background:#0d6efd; color:#fff; border:none; padding:10px 15px; border-radius:50%; cursor:pointer; display:none; z-index:3000;}
+
+    /* ===== Dark Theme ===== */
+    body.dark {background:#121212; color:#f1f1f1;}
+    body.dark header {background:#222;}
+    body.dark nav ul li a {color:#f1f1f1;}
+    body.dark .card {background:#1e1e1e; color:#fff;}
+    body.dark footer {background:#222;}
+    body.dark .edu-item {background:#1e1e1e; color:#f1f1f1; box-shadow: 0 4px 10px rgba(255,255,255,0.05);}
+    body.dark .progress {background:#333;}
+
+    /* ===== Responsive ===== */
+    @media(max-width:900px){header{flex-direction:column;text-align:center;} nav ul{justify-content:center;margin-top:10px;} .hero h2{font-size:2rem;} section{padding:50px 15px;}}
+    @media(max-width:600px){header h1{font-size:1.2rem;} nav ul{gap:10px;} .hero{padding:60px 15px;} .hero img{width:120px;height:120px;} .hero h2{font-size:1.6rem;} .projects{grid-template-columns:1fr;} .edu-item{flex-direction:column;text-align:center;} .edu-logo{margin:0 auto 15px auto;}}
+    @media(max-width:768px){.hamburger{display:block;} nav#navbar{display:none;width:100%;background:#0d6efd;position:absolute;top:60px;left:0;text-align:center;z-index:1000;} nav#navbar.active{display:block;} nav#navbar ul{flex-direction:column;gap:15px;padding:15px 0;}}
+
+  </style>
+</head>
+<body>
+<header>
+  <h1>Yash's Portfolio</h1>
+  <div class="header-right">
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <button class="hamburger" onclick="toggleNav()">☰</button>
+  </div>
+
+  <nav id="navbar">
+    <ul>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#education">EDUCATION</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#languages">LANGUAGES</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#certifications">CERTIFICATIONS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="IMG_20250815_101050 (7).jpg" alt="My Photo">
+  <h2>Hello, I'm Yash 👋</h2>
+  <p class="typing"></p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+As a BCA student specializing in full-stack development, I have gained strong skills in both front-end and back-end technologies through hands-on projects. I consistently demonstrate responsibility and adaptability by proactively taking on challenges and seeking opportunities to expand my skills in dynamic environments. I have developed web applications using various technologies and completed several significant projects during my internship
+  </p>
+</section>
+
+<!-- EDUCATION SECTION -->
+<section id="education">
+  <h2>Education</h2>
+
+  <!-- BCA -->
+  <div class="edu-item">
+    <img src="dg.jpg" alt="DDGDVC Logo" class="edu-logo">
+    <div class="edu-details">
+      <h3>Bachelor of Computer Applications (BCA)</h3>
+      <h4>Dwaraka Doss Goverdhan Doss Vaishnav College</h4>
+      <p class="edu-meta"><span>📅 2023 – Present</span> | <span>📍 Chennai, India</span></p>
+      <p class="gpa">GPA: <strong>8.4 / 10.0</strong></p>
+    </div>
+  </div>
+
+    <!-- Itvedant Full Stack -->
+  <div class="edu-item">
+    <img src="itv.jpg" alt="Itvedant Logo" class="edu-logo">
+    <div class="edu-details">
+      <h3>Master in Full Stack Web Development with Java</h3>
+      <h4>Itvedant Education Pvt. Ltd</h4>
+      <p class="edu-meta"><span>📅 2025 – Present</span> | <span>📍 Chennai, India</span></p>
+    </div>
+  </div>
+
+
+  <!-- Honours Diploma -->
+  <div class="edu-item">
+    <img src="csc.webp" alt="HDFD Logo" class="edu-logo">
+    <div class="edu-details">
+      <h3>Honours Diploma in Full Stack Development</h3>
+      <h4>Computer Software College</h4>
+      <p class="edu-meta"><span>📅 2023 – 2024</span> | <span>📍 Chennai, India</span></p>
+    </div>
+  </div>
+
+  
+  <!-- 12th -->
+  <div class="edu-item">
+    <img src="ssvk.webp" alt="School Logo" class="edu-logo">
+    <div class="edu-details">
+      <h3>Higher Secondary Certificate (HSC)</h3>
+      <h4>Sri Saankara Vidya Kendra Matric Hr. Sec. School</h4>
+      <p class="edu-meta"><span>📅 2022 – 2023</span> | <span>📍 Chennai, India</span></p>
+      <p class="edu-score">Score: <strong>86%</strong></p>
+    </div>
+  </div>
+
+
+</section>
+
+
+
+
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skill"><p>HTML & CSS <span>90%</span></p><div class="progress"><div class="progress-bar" style="width:90%"></div></div></div>
+  <div class="skill"><p>JavaScript <span>85%</span></p><div class="progress"><div class="progress-bar" style="width:85%"></div></div></div>
+  <div class="skill"><p>React <span>60%</span></p><div class="progress"><div class="progress-bar" style="width:60%"></div></div></div>
+  <div class="skill"><p>Python <span>50%</span></p><div class="progress"><div class="progress-bar" style="width:50%"></div></div></div>
+  <div class="skill"><p>Java <span>65%</span></p><div class="progress"><div class="progress-bar" style="width:65%"></div></div></div>
+</section>
+
+<!-- LANGUAGES -->
+<section id="languages">
+  <h2>Languages</h2>
+  <div class="skill"><p>English <span>Proficient</span></p><div class="progress"><div class="progress-bar" style="width:95%"></div></div></div>
+  <div class="skill"><p>Telugu <span>Native</span></p><div class="progress"><div class="progress-bar" style="width:100%"></div></div></div>
+  <div class="skill"><p>Tamil <span>Native</span></p><div class="progress"><div class="progress-bar" style="width:100%"></div></div></div>
+  <div class="skill"><p>Hindi <span>Intermediate</span></p><div class="progress"><div class="progress-bar" style="width:70%"></div></div></div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card" onclick="openModal('To-Do List')">
+      <h3>To-Do List</h3>
+      <p>Task management app built using JavaScript.</p>
+      <a href="https://yashwantchatti005.github.io/to-dolist/" target="_blank" class="project-link">Live Demo</a>
+    </div>
+    <div class="card" onclick="openModal('E-Commerce Website')">
+      <h3>E-Commerce Website</h3>
+      <p>Mini online store with product listing, cart, and checkout functionality.</p>
+    </div>
+    <div class="card" onclick="openModal('Chat Application')">
+      <h3>Chat Application</h3>
+      <p>Real-time messaging app using WebSockets or Firebase.</p>
+      <a href="https://yashwantchatti005.github.io/chatapplication/" target="_blank" class="project-link">Live Demo</a>
+    </div>
+    <div class="card" onclick="openModal('Portfolio Website')">
+      <h3>Portfolio Website</h3>
+      <p>This website itself is a project.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- CERTIFICATIONS SECTION -->
+<section id="certifications">
+  <h2>Certifications</h2>
+
+  <div class="edu-item">
+    <img src="itv.jpg" alt="Itvedant Logo" class="edu-logo">
+    <div class="edu-details">
+      <h3>Web Development Certificate</h3>
+      <h4>Itvedant Education Pvt. Ltd</h4>
+      <p class="edu-meta"><span>📅 2024</span> | <span>📍 Chennai, India</span></p>
+    </div>
+  </div>
+
+  <div class="edu-item">
+    <img src="itv.jpg" alt="Itvedant Logo" class="edu-logo">
+    <div class="edu-details">
+      <h3>JavaScript Certificate</h3>
+      <h4>Itvedant Education Pvt. Ltd</h4>
+      <p class="edu-meta"><span>📅 2024</span> | <span>📍 Chennai, India</span></p>
+    </div>
+  </div>
+
+  <div class="edu-item">
+    <img src="csc.webp" alt="HDFD Logo" class="edu-logo">
+    <div class="edu-details">
+      <h3>Honours Diploma in Full Stack Development</h3>
+      <h4>HDFD Institute</h4>
+      <p class="edu-meta"><span>📅 2023 – 2024</span></p>
+    </div>
+  </div>
+
+  <div class="edu-item">
+    <img src="images.jpg" alt="Video Editing Logo" class="edu-logo">
+    <div class="edu-details">
+      <h3>Video Editing Certificate</h3>
+      <h4>Independent Learning</h4>
+      <p class="edu-meta"><span>📅 2023</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<!-- Back to Top -->
+<button id="backToTop" onclick="scrollToTop()">↑</button>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Sadvik | All Rights Reserved</p>
+  <a href="https://github.com/yashwantchatti005" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://www.linkedin.com/in/yashwantchatti2005" target="_blank"><i class="fab fa-linkedin"></i></a>
+</footer>
+
+<script>
+  // Contact form alert
+  document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault(); alert("Thank you! I will get back to you soon."); this.reset();
+  });
+
+  // Toggle mobile nav
+  function toggleNav(){document.getElementById("navbar").classList.toggle("active");}
+  document.querySelectorAll("#navbar ul li a").forEach(link=>link.addEventListener("click",()=>{document.getElementById("navbar").classList.remove("active");}));
+
+  // Typing effect
+  const text="Aspiring Full Stack Developer | Passionate about Web Development";
+  let i=0;
+  function typingEffect(){const el=document.querySelector(".typing"); if(i<text.length){el.innerHTML+=text.charAt(i); i++; setTimeout(typingEffect,50);}}
+  typingEffect();
+
+  // Animate sections on scroll
+  function revealOnScroll(){document.querySelectorAll("section").forEach(section=>{const rect=section.getBoundingClientRect(); if(rect.top<window.innerHeight-100){section.classList.add("visible");}});}
+  window.addEventListener("scroll",revealOnScroll); window.addEventListener("load",()=>{revealOnScroll();});
+
+  // Animate progress bars
+  window.addEventListener("load",()=>{document.querySelectorAll(".progress-bar").forEach(bar=>{const w=bar.style.width; bar.style.width="1%"; setTimeout(()=>{bar.style.width=w;},700);});});
+
+  // Dark mode toggle with persistence
+  function toggleTheme(){const btn=document.querySelector(".theme-toggle"); document.body.classList.toggle("dark"); if(document.body.classList.contains("dark")){btn.textContent="☀️"; localStorage.setItem("theme","dark");}else{btn.textContent="🌙"; localStorage.setItem("theme","light");}}
+  window.addEventListener("DOMContentLoaded",()=>{const saved=localStorage.getItem("theme");const btn=document.querySelector(".theme-toggle");if(saved==="dark"){document.body.classList.add("dark");btn.textContent="☀️";}else{btn.textContent="🌙";}});
+
+  // Back to top button
+  window.addEventListener("scroll",()=>{document.getElementById("backToTop").style.display=window.scrollY>300?"block":"none";});
+  function scrollToTop(){window.scrollTo({top:0,behavior:"smooth"});}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
