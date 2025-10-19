@@ -90,6 +90,25 @@
     body.dark .edu-item {background:#1e1e1e; color:#f1f1f1; box-shadow: 0 4px 10px rgba(255,255,255,0.05);}
     body.dark .progress {background:#333;}
 
+    /* ===== Fix text color for dark mode in education & certification ===== */
+body.dark .edu-details h3,
+body.dark .edu-details h4,
+body.dark .edu-meta,
+body.dark .edu-score,
+body.dark .gpa {
+  color: #ffffff; /* Makes all education & certificate text white */
+}
+
+body.dark .edu-meta span {
+  color: #bbbbbb; /* Slightly dimmer for meta info */
+}
+    
+body.dark .edu-logo {
+  background: #fff;
+  border-color: #6610f2;
+}
+
+
     /* ===== Responsive ===== */
     @media(max-width:900px){header{flex-direction:column;text-align:center;} nav ul{justify-content:center;margin-top:10px;} .hero h2{font-size:2rem;} section{padding:50px 15px;}}
     @media(max-width:600px){header h1{font-size:1.2rem;} nav ul{gap:10px;} .hero{padding:60px 15px;} .hero img{width:120px;height:120px;} .hero h2{font-size:1.6rem;} .projects{grid-template-columns:1fr;} .edu-item{flex-direction:column;text-align:center;} .edu-logo{margin:0 auto 15px auto;}}
@@ -328,6 +347,7 @@ As a BCA student specializing in full-stack development, I have gained strong sk
 </script>
 </body>
 </html>
+
 
 
 
