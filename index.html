@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sadvik | Portfolio</title>
+  <title>Yashwant | Portfolio</title>
   <meta name="description" content="Yashwant Kumar | Full Stack Developer | Portfolio">
   <meta name="keywords" content="Full Stack Developer, JavaScript, React, Portfolio, Web Development">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
+
+    
     /* ===== Reset ===== */
     * {margin: 0; padding: 0; box-sizing: border-box;}
     html {scroll-behavior: smooth;}
@@ -21,7 +23,14 @@
     .header-right {display: flex; align-items: center; gap: 10px;}
     nav ul {list-style: none; display: flex; flex-wrap: wrap; gap: 20px;}
     nav ul li a {color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s;}
-    nav ul li a:hover, nav ul li a.active {color: #ffeb3b; border-bottom: 2px solid #ffeb3b; padding-bottom: 2px;}
+   nav ul li a:hover,
+nav ul li a.active {
+  color: #ffeb3b;
+  text-decoration: none;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
     .theme-toggle, .hamburger {cursor: pointer; font-size: 1.2rem; background: #fff; color: #0d6efd; border: none; border-radius: 5px; padding: 5px 10px; transition: all 0.3s;}
     .hamburger {background: none; color: #fff; display: none;}
 
@@ -45,8 +54,27 @@
 
     /* ===== Projects ===== */
     .projects {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
-    .card {background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, background 0.3s; cursor: pointer; position: relative;}
-    .card:hover {transform: translateY(-10px); background: #f0f8ff;}
+    .card {
+  background:#151515;
+  padding:20px;
+  border-radius:15px;
+  border:1px solid rgba(255,0,0,0.25);
+  color:#fff;
+  box-shadow:0 2px 8px rgba(0,0,0,0.3);
+  transition:0.35s ease;
+  cursor:pointer;
+}
+
+.card:hover {
+  transform:translateY(-8px) scale(1.02);
+  border-color:#ff0000;
+  box-shadow:
+    0 0 20px rgba(255,0,0,0.6),
+    0 0 40px rgba(255,0,0,0.5),
+    0 0 70px rgba(255,0,0,0.4);
+  background:#1a0000;
+}
+
     .project-link {display: inline-block; margin-top: 10px; text-decoration: none; color: #0d6efd; font-weight: 600; transition: color 0.3s;}
     .project-link:hover {color: #6610f2;}
 
@@ -109,31 +137,635 @@ body.dark .edu-logo {
 }
 
 
+
+
     /* ===== Responsive ===== */
     @media(max-width:900px){header{flex-direction:column;text-align:center;} nav ul{justify-content:center;margin-top:10px;} .hero h2{font-size:2rem;} section{padding:50px 15px;}}
     @media(max-width:600px){header h1{font-size:1.2rem;} nav ul{gap:10px;} .hero{padding:60px 15px;} .hero img{width:120px;height:120px;} .hero h2{font-size:1.6rem;} .projects{grid-template-columns:1fr;} .edu-item{flex-direction:column;text-align:center;} .edu-logo{margin:0 auto 15px auto;}}
     @media(max-width:768px){.hamburger{display:block;} nav#navbar{display:none;width:100%;background:#0d6efd;position:absolute;top:60px;left:0;text-align:center;z-index:1000;} nav#navbar.active{display:block;} nav#navbar ul{flex-direction:column;gap:15px;padding:15px 0;}}
 
-  </style>
+
+    /* TIMELINE STYLES */
+.timeline {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  position: relative;
+}
+.timeline .timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(13,110,253,0.9), rgba(102,16,242,0.9));
+  border-radius: 4px;
+}
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(.2,.9,.2,1);
+}
+.timeline-item.visible { opacity: 1; transform: translateY(0); }
+
+.timeline-item .bubble {
+  position: absolute;
+  top: 24px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #0d6efd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.timeline-item .content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(13,110,253,0.06);
+}
+.timeline-item .date { font-size: 0.85rem; color: #666; margin-bottom: 6px; display:flex; align-items:center; gap:8px; }
+.timeline-item h3 { margin:0 0 6px 0; font-size:1.05rem; color:#111; }
+.timeline-item p { margin:0; color:#444; font-size:0.95rem; }
+
+/* left / right placement */
+.timeline-item.left  { left: 0; text-align: right; padding-right: 40px; }
+.timeline-item.right { left: 50%; text-align: left; padding-left: 40px; }
+
+/* bubble position according to side */
+.timeline-item.left  .bubble  { right: -34px; }
+.timeline-item.right .bubble  { left: -34px; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .timeline .timeline-line { left: 8px; transform: none; }
+  .timeline-item { width: 100%; left: 0 !important; padding-left: 56px; text-align: left !important; }
+  .timeline-item.left .bubble, .timeline-item.right .bubble { left: 16px; right: auto; }
+}
+
+/* dark theme support */
+body.dark .timeline-item .content { background: #171717; color: #e9e9e9; box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+body.dark .timeline .timeline-line { background: linear-gradient(180deg, rgba(13,110,253,0.6), rgba(102,16,242,0.6)); }
+body.dark .timeline-item .date { color: #cfcfcf; }
+
+/* DARK THEME FIX FOR EDUCATION TIMELINE */
+body.dark .timeline-item .content {
+  background: #1e1e1e !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6) !important;
+}
+
+body.dark .timeline-item .date {
+  color: #cccccc !important;
+}
+
+body.dark .timeline-item h3 {
+  color: #ffffff !important;
+}
+
+body.dark .timeline-item p {
+  color: #dddddd !important;
+}
+
+body.dark .timeline .timeline-line {
+  background: linear-gradient(180deg, rgba(13,110,253,0.5), rgba(102,16,242,0.5)) !important;
+}
+
+body.dark .timeline-item .bubble {
+  background: #1e1e1e !important;
+  border-color: #6610f2 !important;
+}
+/* CLEAN, LIGHT PREMIUM CARDS */
+.clean-layout {
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 60px auto;
+}
+
+.soft-card {
+  flex: 1;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.soft-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+}
+
+/* SUBTLE GRADIENT TOP BORDER */
+.soft-card::before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 18px 18px 0 0;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+}
+
+/* HEADINGS */
+.soft-card h2 {
+  font-size: 1.5rem;
+  color: #0d6efd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* SKILL ROW */
+.soft-card .skill {
+  margin-bottom: 15px;
+}
+
+.soft-card .skill p {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #333;
+}
+
+/* PROGRESS BARS — LIGHT CLEAN */
+.soft-card .progress {
+  height: 10px;
+  background: #e8e8e8;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.soft-card .progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  border-radius: 20px;
+  transition: width 0.8s ease;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px){
+  .clean-layout {
+    flex-direction: column;
+  }
+}
+
+/* DARK MODE SUPPORT */
+body.dark .soft-card {
+  background: #1e1e1e;
+  border-color: #333;
+  box-shadow: 0 6px 20px rgba(255,255,255,0.05);
+}
+
+body.dark .soft-card h2,
+body.dark .soft-card p {
+  color: white;
+}
+
+body.dark .progress {
+  background: #444;
+}
+/* ===== RED HOVER SHADOW ONLY IN DARK THEME ===== */
+
+body.dark .card:hover {
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.45) !important;
+  transform: translateY(-8px);
+}
+
+body.dark .edu-item:hover {
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.45) !important;
+  transform: translateY(-6px);
+}
+
+body.dark .soft-card:hover {
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.45) !important;
+  transform: translateY(-6px);
+}
+
+
+/* ===== EDUCATION CARDS ===== */
+.education-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.educ-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.educ-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.35);
+}
+
+.educ-card h3 {
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+  color: #0d6efd;
+}
+
+.educ-card h4 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.educ-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.educ-date {
+  background: #0d6efd;
+  color: #fff;
+  padding: 4px 10px;
+  display: inline-block;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Dark mode support */
+body.dark .educ-card {
+  background: #1e1e1e;
+  color: #fff;
+  border-color: #f4e2e2;
+}
+
+body.dark .educ-card h3 { color: #4da3ff; }
+body.dark .educ-card p { color: #ddd; }
+body.dark .educ-date { background: #6610f2; }
+
+<style>
+
+/* ===== RESET ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background:#0a0a0a;
+  color:#eaeaea;
+  overflow-x:hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+  background:#0d0d0d;
+  color:#fff;
+  padding:15px 30px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #222;
+}
+nav ul {
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+nav ul li a {
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+  transition:0.3s;
+}
+nav ul li a:hover {
+  color:#ff1a1a;
+  text-shadow:0 0 12px #ff1a1a;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#ff0000,#4b0000,#0a0a0a);
+  border-radius:15px;
+  margin:40px auto;
+  box-shadow:0 0 40px rgba(255,0,0,0.5);
+}
+.hero img {
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  border:4px solid #fff;
+  box-shadow:0 0 35px rgba(255,0,0,0.7);
+}
+
+/* ===== TITLES ===== */
+section h2 {
+  text-align:center;
+  margin-bottom:20px;
+  font-size:2rem;
+  background:linear-gradient(90deg,#ff0000,#b30000,#660000);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-shadow:0 0 10px rgba(255,0,0,0.5);
+}
+
+/* ===== UNIVERSAL CARDS ===== */
+.card,
+.soft-card,
+.educ-card,
+.edu-item {
+  background:#151515;
+  border:1px solid rgba(255,0,0,0.25);
+  color:#fff;
+  border-radius:15px;
+  padding:20px;
+  transition:0.3s ease;
+}
+
+/* ===== PURE RED NEON HOVER ===== */
+.card:hover,
+.soft-card:hover,
+.educ-card:hover,
+.edu-item:hover {
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:
+    0 0 22px rgba(255,0,0,0.7),
+    0 0 45px rgba(255,0,0,0.5),
+    0 0 60px rgba(255,0,0,0.4);
+  border-color:#ff0000;
+}
+
+/* ===== PROGRESS BARS ===== */
+.progress {
+  height:10px;
+  background:#2a2a2a;
+  border-radius:20px;
+  overflow:hidden;
+}
+.progress-bar {
+  height:100%;
+  background:linear-gradient(90deg,#ff0000,#b30000,#660000);
+}
+
+/* ===== PROJECTS GRID ===== */
+.projects {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.project-link {
+  color:#ff3333;
+  text-decoration:none;
+}
+.project-link:hover {
+  color:#ff0000;
+  text-shadow:0 0 10px #ff0000;
+}
+
+/* ===== EDUCATION ===== */
+.educ-card h3,
+.edu-item h3 {
+  color:#ff4d4d;
+}
+
+.educ-date {
+  background:#ff0000;
+  padding:5px 12px;
+  border-radius:6px;
+  font-size:0.8rem;
+  display:inline-block;
+  color:#fff;
+}
+
+/* ===== TIMELINE ===== */
+.timeline .timeline-line {
+  background:linear-gradient(180deg,#ff0000,#b30000,#660000);
+}
+.timeline-item .content {
+  background:#151515;
+  color:#fff;
+  box-shadow:0 0 18px rgba(255,0,0,0.25);
+}
+.timeline-item .bubble {
+  background:#1c1c1c;
+  border-color:#ff0000;
+}
+
+/* ===== FORM ===== */
+input, textarea {
+  background:#111;
+  color:#fff;
+  border:1px solid #333;
+  padding:12px;
+}
+button {
+  background:#ff0000;
+  border:none;
+  color:#fff;
+  padding:12px;
+  border-radius:5px;
+  transition:0.3s;
+}
+button:hover {
+  background:#cc0000;
+  box-shadow:0 0 20px #ff0000;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background:#0d0d0d;
+  padding:20px;
+  text-align:center;
+  color:#fff;
+  border-top:1px solid #222;
+}
+footer a {
+  color:#ff3333;
+}
+footer a:hover {
+  text-shadow:0 0 10px #ff0000;
+}
+
+
+.hero {
+  background: radial-gradient(circle farthest-corner,
+    #660000,
+    #330000,
+    #000000
+  );
+  box-shadow: 0 0 45px rgba(255,0,0,0.6);
+}
+
+/* Force white text in SKILLS & LANGUAGES section */
+#skills,
+#skills h2,
+#skills h3,
+#skills p,
+#skills span {
+  color: #ffffff !important;
+}
+
+#skills .progress {
+  background: #2a2a2a !important;
+}
+
+#skills .progress-bar {
+  background: linear-gradient(90deg, #ff0000, #b30000, #660000) !important;
+}
+
+
+.projects .card:hover h3 {
+  color: #ff0000 !important;
+  text-shadow: 
+      0 0 12px rgba(255, 0, 0, 0.8),
+      0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+/* UNIVERSAL NEON RED HOVER FOR ALL CARDS */
+.card,
+.soft-card,
+.educ-card,
+.edu-item {
+  transition: 0.35s ease !important;
+  background: #151515 !important;
+  border: 1px solid rgba(255, 0, 0, 0.25) !important;
+}
+
+/* SAME HOVER EFFECT AS PROJECTS — APPLIED TO ALL */
+.card:hover,
+.soft-card:hover,
+.educ-card:hover,
+.edu-item:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: #ff0000 !important;
+  background: #1a0000 !important;
+  box-shadow:
+    0 0 20px rgba(255,0,0,0.6),
+    0 0 40px rgba(255,0,0,0.5),
+    0 0 70px rgba(255,0,0,0.4) !important;
+}
+
+/* ✨ PROJECT POPUP (MODAL) — DARK RED NEON STYLE */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  backdrop-filter: blur(5px);
+}
+
+.project-modal-content {
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 450px;
+  color: white;
+  text-align: center;
+  border: 1px solid #ff000044;
+  box-shadow:
+    0 0 20px rgba(255,0,0,0.6),
+    0 0 40px rgba(255,0,0,0.4);
+  transform: scale(0.5);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.project-modal.show .project-modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.close-project-btn {
+  background: #ff0000;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  color: #fff;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-project-btn:hover {
+  background: #cc0000;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+.modal-tech {
+  margin: 10px 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  color: #ff4d4d;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px red;
+}
+
+.modal-live-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 15px;
+  background: #ff0000;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.modal-live-btn:hover {
+  background: #cc0000;
+  box-shadow: 0 0 15px red;
+}
+
+
+</style>
+
+
+
+
+
 </head>
 <body>
 <header>
   <h1>Yash's Portfolio</h1>
   <div class="header-right">
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
     <button class="hamburger" onclick="toggleNav()">☰</button>
   </div>
 
   <nav id="navbar">
-    <ul>
-      <li><a href="#about">ABOUT</a></li>
-      <li><a href="#education">EDUCATION</a></li>
-      <li><a href="#skills">SKILLS</a></li>
-      <li><a href="#languages">LANGUAGES</a></li>
-      <li><a href="#projects">PROJECTS</a></li>
-      <li><a href="#certifications">CERTIFICATIONS</a></li>
-      <li><a href="#contact">CONTACT</a></li>
-    </ul>
+<ul>
+  <li><a href="#about">ABOUT</a></li>
+  <li><a href="#education">EDUCATION</a></li>
+<li><a href="#skills">SKILLS & LANGUAGES</a></li>
+
+   <li><a href="#experience">EXPERIENCE</a></li>
+  <li><a href="#projects">PROJECTS</a></li>
+  <li><a href="#certifications">CERTIFICATIONS</a></li>
+  <li><a href="#achievements">ACHIEVEMENTS</a></li>
+  <li><a href="#contact">CONTACT</a></li>
+</ul>
+
   </nav>
 </header>
 
@@ -152,81 +784,142 @@ As a BCA student specializing in full-stack development, I have gained strong sk
   </p>
 </section>
 
-<!-- EDUCATION SECTION -->
+<!-- EDUCATION (CARD STYLE) -->
 <section id="education">
   <h2>Education</h2>
 
-  <!-- BCA -->
-  <div class="edu-item">
-    <img src="dg.jpg" alt="DDGDVC Logo" class="edu-logo">
-    <div class="edu-details">
-      <h3>Bachelor of Computer Applications (BCA)</h3>
-      <h4>Dwaraka Doss Goverdhan Doss Vaishnav College</h4>
-      <p class="edu-meta"><span>📅 2023 – Present</span> | <span>📍 Chennai, India</span></p>
-      <p class="gpa">GPA: <strong>8.4 / 10.0</strong></p>
-    </div>
-  </div>
+  <div class="education-cards">
 
-    <!-- Itvedant Full Stack -->
-  <div class="edu-item">
-    <img src="itv.jpg" alt="Itvedant Logo" class="edu-logo">
-    <div class="edu-details">
-      <h3>Master in Full Stack Web Development with Java</h3>
+    <div class="educ-card">
+      <div class="educ-date">2023 – 2026</div>
+      <h3>Bachelor of Computer Applications</h3>
+      <h4>Dwaraka Doss Goverdhan Doss Vaishnav College — Chennai</h4>
+      <p>GPA: 8.4 / 10</p>
+    </div>
+
+    <div class="educ-card">
+      <div class="educ-date">2025 – 2026</div>
+      <h3>Master in Full Stack Web Development</h3>
       <h4>Itvedant Education Pvt. Ltd</h4>
-      <p class="edu-meta"><span>📅 2025 – Present</span> | <span>📍 Chennai, India</span></p>
+      <p>Advanced full-stack development training.</p>
     </div>
+
+    <div class="educ-card">
+      <div class="educ-date">2023 – 2024</div>
+      <h3>Honours Diploma in Full Stack</h3>
+      <h4>Front-end + Back-end foundations</h4>
+      <p>Covered HTML, CSS, JS, Python, MySQL basics.</p>
+    </div>
+
+    <div class="educ-card">
+      <div class="educ-date">2022 – 2023</div>
+      <h3>Higher Secondary (HSC)</h3>
+      <h4>Sri Saankara Vidya Kendra </h4>
+      <p>Commerce with Computer Applications — 86%</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- SKILLS + LANGUAGES COMBINED -->
+<section id="skills" class="soft-card" style="max-width:1100px; margin:40px auto;">
+  <h2><i class="fa-solid fa-laptop-code"></i> Skills & Languages</h2>
+
+  <!-- SKILLS -->
+  <h3 style="margin-bottom:10px; color:#ff4d4d;">Technical Skills</h3>
+
+  <div class="skill">
+    <p>HTML & CSS <span>90%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
   </div>
 
+  <div class="skill">
+    <p>JavaScript <span>85%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+  </div>
 
-  <!-- Honours Diploma -->
+  <div class="skill">
+    <p>React JS <span>60%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>Python <span>50%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:50%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>Java <span>65%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:65%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>GitHub <span>95%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>VS Code <span>100%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:100%"></div></div>
+  </div>
+
+  <br>
+
+  <!-- LANGUAGES -->
+  <h3 style="margin-bottom:10px; color:#ff4d4d;">Languages</h3>
+
+  <div class="skill">
+    <p>English <span>Proficient</span></p>
+    <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>Telugu <span>Native</span></p>
+    <div class="progress"><div class="progress-bar" style="width:100%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>Tamil <span>Native</span></p>
+    <div class="progress"><div class="progress-bar" style="width:100%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>Hindi <span>Intermediate</span></p>
+    <div class="progress"><div class="progress-bar" style="width:40%"></div></div>
+  </div>
+
+</section>
+
+
+
+
+
+<!-- EXPERIENCE SECTION -->
+<section id="experience">
+  <h2>Experience</h2>
+
+  <!-- Unified Mentor Internship -->
   <div class="edu-item">
-    <img src="csc.webp" alt="HDFD Logo" class="edu-logo">
+    <img src="um.jpg" alt="Unified Mentor Logo" class="edu-logo">
     <div class="edu-details">
-      <h3>Honours Diploma in Full Stack Development</h3>
-      <h4>Computer Software College</h4>
-      <p class="edu-meta"><span>📅 2023 – 2024</span> | <span>📍 Chennai, India</span></p>
+      <h3>Web Development Intern</h3>
+      <h4>Unified Mentor</h4>
+      <p class="edu-meta">
+        <span>📅 March 2025 – April 2025</span> 
+        <span>📍 Remote</span>
+      </p>
+      <p class="edu-score">
+        Worked on building projects like To-Do List App, Chat Application, and contributed to front-end UI development.
+      </p>
     </div>
   </div>
 
-  
-  <!-- 12th -->
-  <div class="edu-item">
-    <img src="ssvk.webp" alt="School Logo" class="edu-logo">
-    <div class="edu-details">
-      <h3>Higher Secondary Certificate (HSC)</h3>
-      <h4>Sri Saankara Vidya Kendra Matric Hr. Sec. School</h4>
-      <p class="edu-meta"><span>📅 2022 – 2023</span> | <span>📍 Chennai, India</span></p>
-      <p class="edu-score">Score: <strong>86%</strong></p>
-    </div>
-  </div>
-
-
 </section>
 
-
-
-
-
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skill"><p>HTML & CSS <span>90%</span></p><div class="progress"><div class="progress-bar" style="width:90%"></div></div></div>
-  <div class="skill"><p>JavaScript <span>85%</span></p><div class="progress"><div class="progress-bar" style="width:85%"></div></div></div>
-  <div class="skill"><p>React Js <span>60%</span></p><div class="progress"><div class="progress-bar" style="width:60%"></div></div></div>
-  <div class="skill"><p>Python <span>50%</span></p><div class="progress"><div class="progress-bar" style="width:50%"></div></div></div>
-  <div class="skill"><p>Java <span>65%</span></p><div class="progress"><div class="progress-bar" style="width:65%"></div></div></div>
-  <div class="skill"><p>GitHub <span>95%</span></p><div class="progress"><div class="progress-bar" style="width:95%"></div></div></div>
-  <div class="skill"><p>VS Code <span>100%</span></p><div class="progress"><div class="progress-bar" style="width:100%"></div></div></div>
-</section>
-
-<!-- LANGUAGES -->
-<section id="languages">
-  <h2>Languages</h2>
-  <div class="skill"><p>English <span>Proficient</span></p><div class="progress"><div class="progress-bar" style="width:95%"></div></div></div>
-  <div class="skill"><p>Telugu <span>Native</span></p><div class="progress"><div class="progress-bar" style="width:100%"></div></div></div>
-  <div class="skill"><p>Tamil <span>Native</span></p><div class="progress"><div class="progress-bar" style="width:100%"></div></div></div>
-  <div class="skill"><p>Hindi <span>Intermediate</span></p><div class="progress"><div class="progress-bar" style="width:40%"></div></div></div>
-</section>
 
 <!-- Projects -->
 <section id="projects">
@@ -255,16 +948,30 @@ As a BCA student specializing in full-stack development, I have gained strong sk
 </section>
 
 
+<div id="projectModal" class="project-modal">
+  <div class="project-modal-content">
+    <h2 class="modal-title" id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+    <p class="modal-tech" id="modalTech"></p>
+    <a id="modalLink" href="#" target="_blank" class="modal-live-btn">Live Demo</a>
+    <br>
+    <button class="close-project-btn" onclick="closeProjectModal()">Close</button>
+  </div>
+</div>
+
+
 <!-- CERTIFICATIONS SECTION -->
 <section id="certifications">
   <h2>Certifications</h2>
+
+
 
   <div class="edu-item">
     <img src="itv.jpg" alt="Itvedant Logo" class="edu-logo">
     <div class="edu-details">
       <h3>Web Development Certificate</h3>
       <h4>Itvedant Education Pvt. Ltd</h4>
-      <p class="edu-meta"><span>📅 2025</span> | <span>📍 Chennai, India</span></p>
+      <p class="edu-meta"><span>📅 2024</span> | <span>📍 Chennai, India</span></p>
     </div>
   </div>
 
@@ -272,6 +979,16 @@ As a BCA student specializing in full-stack development, I have gained strong sk
     <img src="itv.jpg" alt="Itvedant Logo" class="edu-logo">
     <div class="edu-details">
       <h3>JavaScript Certificate</h3>
+      <h4>Itvedant Education Pvt. Ltd</h4>
+      <p class="edu-meta"><span>📅 2024</span> | <span>📍 Chennai, India</span></p>
+    </div>
+  </div>
+
+    <!-- React Essentials Certificate -->
+  <div class="edu-item">
+    <img src="itv.jpg" alt="Itvedant Logo" class="edu-logo">
+    <div class="edu-details">
+      <h3>React Essentials Certificate</h3>
       <h4>Itvedant Education Pvt. Ltd</h4>
       <p class="edu-meta"><span>📅 2025</span> | <span>📍 Chennai, India</span></p>
     </div>
@@ -296,6 +1013,46 @@ As a BCA student specializing in full-stack development, I have gained strong sk
   </div>
 </section>
 
+<!-- ACHIEVEMENTS SECTION -->
+<section id="achievements">
+  <h2>Achievements</h2>
+
+  <div style="max-width:900px; margin:auto;">
+
+    <div class="edu-item">
+      <div class="edu-details">
+        <h3>✔️ Completed 10+ Web Development Projects</h3>
+        <p class="edu-meta">Built real-world apps like To-Do List, E-Commerce, Chat App & Portfolio.</p>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-details">
+        <h3>✔️ 100+ GitHub Commits</h3>
+        <p class="edu-meta">Strong daily consistency & active coding streak.</p>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-details">
+        <h3>✔️ Multiple Certifications Achieved</h3>
+        <p class="edu-meta">React Essentials, JavaScript, Web Development, Full Stack Diploma.</p>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-details">
+        <h3>✔️ Internship Completed at Unified Mentor</h3>
+        <p class="edu-meta">Built real-world front-end applications during internship.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
 <!-- CONTACT -->
 <section id="contact">
   <h2>Contact Me</h2>
@@ -312,12 +1069,69 @@ As a BCA student specializing in full-stack development, I have gained strong sk
 
 <!-- Footer -->
 <footer>
-  <p>© 2025 Sadvik | All Rights Reserved</p>
+  <p>© 2025 Yashwant | All Rights Reserved</p>
   <a href="https://github.com/yashwantchatti005" target="_blank"><i class="fab fa-github"></i></a>
   <a href="https://www.linkedin.com/in/yashwantchatti2005" target="_blank"><i class="fab fa-linkedin"></i></a>
 </footer>
 
+
+
 <script>
+
+  // 🔥 PROJECT MODAL DATA
+const projectInfo = {
+  "To-Do List": {
+    desc: "A clean and interactive task manager built using HTML, CSS & JavaScript.",
+    tech: "Tech Stack: HTML • CSS • JavaScript",
+    link: "https://yashwantchatti005.github.io/to-dolist/"
+  },
+
+  "E-Commerce Website": {
+    desc: "A mini shopping website with products, cart and checkout.",
+    tech: "Tech Stack: HTML • CSS • Bootstrap • JavaScript",
+    link: "https://yashwantchatti005.github.io/Yash-mart/"
+  },
+
+  "Chat Application": {
+    desc: "Real-time chat app using Firebase / WebSockets.",
+    tech: "Tech Stack: JavaScript • Firebase",
+    link: "https://yashwantchatti005.github.io/chatapplication/"
+  },
+
+  "Portfolio Website": {
+    desc: "This portfolio itself. Fully responsive and animated.",
+    tech: "Tech Stack: HTML • CSS • JS",
+    link: "#"
+  }
+};
+
+// 🔥 OPEN MODAL
+function openModal(projectName){
+  const modal = document.getElementById("projectModal");
+
+  document.getElementById("modalTitle").textContent = projectName;
+  document.getElementById("modalDesc").textContent = projectInfo[projectName].desc;
+  document.getElementById("modalTech").textContent = projectInfo[projectName].tech;
+  document.getElementById("modalLink").href = projectInfo[projectName].link;
+
+  modal.style.display = "flex";
+  setTimeout(() => modal.classList.add("show"), 10);
+}
+
+// 🔥 CLOSE MODAL
+function closeProjectModal(){
+  const modal = document.getElementById("projectModal");
+  modal.classList.remove("show");
+  setTimeout(() => modal.style.display = "none", 250);
+}
+
+// Close on background click
+document.getElementById("projectModal").addEventListener("click", function(e){
+  if(e.target === this){ closeProjectModal(); }
+});
+
+
+  
   // Contact form alert
   document.getElementById("contactForm").addEventListener("submit", function(e){
     e.preventDefault(); alert("Thank you! I will get back to you soon."); this.reset();
@@ -347,34 +1161,28 @@ As a BCA student specializing in full-stack development, I have gained strong sk
   // Back to top button
   window.addEventListener("scroll",()=>{document.getElementById("backToTop").style.display=window.scrollY>300?"block":"none";});
   function scrollToTop(){window.scrollTo({top:0,behavior:"smooth"});}
+
+  // TIMELINE - reveal items with Intersection Observer
+(function () {
+  const items = document.querySelectorAll('.timeline-item');
+  if (!items.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // optionally unobserve to only animate once:
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  items.forEach(item => observer.observe(item));
+})();
+
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
