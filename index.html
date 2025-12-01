@@ -773,6 +773,118 @@ html {
     transform: scale(1.05);
 }
 
+/* ===== COUNTERS SECTION (ULTRA DARK + NEON RED) ===== */
+#counters {
+  text-align: center;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: #0a0a0a; /* Dark background */
+  border-radius: 15px;
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.15);
+}
+
+.counter-box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.counter-box {
+  background: #0d0d0d; /* Darker card */
+  border: 1px solid rgba(255, 0, 0, 0.18);
+  border-radius: 15px;
+  padding: 28px;
+  transition: 0.35s ease-out;
+  box-shadow: inset 0 0 12px rgba(255, 0, 0, 0.08);
+}
+
+.counter-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: #140000; /* Deep blood-red black */
+  border-color: #ff0000;
+  box-shadow:
+    0 0 25px rgba(255, 0, 0, 0.5),
+    0 0 50px rgba(255, 0, 0, 0.4),
+    inset 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.counter-box h3 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #ff1a1a;
+  margin-bottom: 12px;
+  text-shadow:
+    0 0 10px rgba(255, 0, 0, 0.8),
+    0 0 25px rgba(255, 0, 0, 0.5);
+}
+
+.counter-box p {
+  color: #cccccc;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ===== EXPERIENCE CARD (NEON RED PROFESSIONAL STYLE) ===== */
+#experience .edu-item {
+    background: #0c0c0c;
+    border: 1px solid rgba(255, 0, 0, 0.25);
+    border-radius: 18px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: 0.4s ease-out;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.15);
+}
+
+#experience .edu-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: #190000;
+    border-color: #ff0000;
+    box-shadow: 
+        0 0 30px rgba(255, 0, 0, 0.45),
+        0 0 55px rgba(255, 0, 0, 0.35);
+}
+
+#experience .edu-logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    object-fit: contain;
+    border: 1px solid #ff0000;
+    background: #fff;
+    padding: 5px;
+}
+
+/* Text Styling */
+#experience .edu-details h3 {
+    color: #ff4d4d;
+    font-size: 1.15rem;
+    margin-bottom: 2px;
+}
+
+#experience .edu-details h4 {
+    color: #dddddd;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+#experience .edu-meta {
+    font-size: 0.82rem;
+    color: #bbbbbb;
+    margin-bottom: 6px;
+}
+
+#experience .edu-score {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+}
+
+
+
 
 
 
@@ -822,7 +934,8 @@ html {
 <section id="about">
   <h2>About Me</h2>
   <p>
-As a BCA student specializing in full-stack development, I have gained strong skills in both front-end and back-end technologies through hands-on projects. I consistently demonstrate responsibility and adaptability by proactively taking on challenges and seeking opportunities to expand my skills in dynamic environments. I have developed web applications using various technologies and completed several significant projects during my internship
+Hi, I’m Yashwant, a full-stack development enthusiast who enjoys building sleek, functional, and impactful web applications. I’m pursuing BCA and have already worked on several projects—from simple tools to full-stack applications—during my internship and personal learning journey.
+I like challenging myself, exploring new technologies, and focusing on writing clean, efficient code. My goal is to grow as a developer and contribute to meaningful tech solutions.
   </p>
 </section>
 
@@ -1055,43 +1168,35 @@ As a BCA student specializing in full-stack development, I have gained strong sk
   </div>
 </section>
 
-<!-- ACHIEVEMENTS SECTION -->
-<section id="achievements">
-  <h2>Achievements</h2>
+<!-- COUNTERS SECTION -->
+<section id="counters">
+  <h2>My Achievements</h2>
 
-  <div style="max-width:900px; margin:auto;">
+  <div class="counter-box-container">
 
-    <div class="edu-item">
-      <div class="edu-details">
-        <h3>✔️ Completed 10+ Web Development Projects</h3>
-        <p class="edu-meta">Built real-world apps like To-Do List, E-Commerce, Chat App & Portfolio.</p>
-      </div>
+    <div class="counter-box">
+      <h3 class="counter" data-target="10">0</h3>
+      <p>Projects Completed</p>
     </div>
 
-    <div class="edu-item">
-      <div class="edu-details">
-        <h3>✔️ 100+ GitHub Commits</h3>
-        <p class="edu-meta">Strong daily consistency & active coding streak.</p>
-      </div>
+    <div class="counter-box">
+      <h3 class="counter" data-target="1">0</h3>
+      <p>Internships Completed</p>
     </div>
 
-    <div class="edu-item">
-      <div class="edu-details">
-        <h3>✔️ Multiple Certifications Achieved</h3>
-        <p class="edu-meta">React Essentials, JavaScript, Web Development, Full Stack Diploma.</p>
-      </div>
+    <div class="counter-box">
+      <h3 class="counter" data-target="100">0</h3>
+      <p>GitHub Commits</p>
     </div>
 
-    <div class="edu-item">
-      <div class="edu-details">
-        <h3>✔️ Internship Completed at Unified Mentor</h3>
-        <p class="edu-meta">Built real-world front-end applications during internship.</p>
-      </div>
+    <div class="counter-box">
+      <h3 class="counter" data-target="3">0</h3>
+      <p>Certifications</p>
     </div>
 
   </div>
-
 </section>
+
 
 
 
@@ -1127,6 +1232,42 @@ As a BCA student specializing in full-stack development, I have gained strong sk
 <script>
 
   document.body.classList.add("light");
+
+  // COUNTER ANIMATION
+function animateCounters() {
+  const counters = document.querySelectorAll('.counter');
+  const speed = 60; // Smaller number = faster
+
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+
+    const updateCounter = () => {
+      if (count < target) {
+        count += Math.ceil(target / speed);
+        counter.textContent = count;
+        setTimeout(updateCounter, 40);
+      } else {
+        counter.textContent = target + "+";
+      }
+    };
+
+    updateCounter();
+  });
+}
+
+let counterStarted = false;
+
+window.addEventListener("scroll", function () {
+  const countersSection = document.getElementById("counters");
+  const rect = countersSection.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight - 100 && !counterStarted) {
+    counterStarted = true;
+    animateCounters();
+  }
+});
+
 
 
   // 🔥 PROJECT MODAL DATA
