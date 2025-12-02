@@ -884,6 +884,88 @@ html {
 }
 
 
+/* =====🔥 PREMIUM CERTIFICATION CARDS (NEON RED UPGRADE) ===== */
+
+#certifications {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+#certifications h2 {
+  margin-bottom: 40px;
+}
+
+/* Grid layout */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.cert-card {
+  background: #0d0d0d;
+  border: 1px solid rgba(255,0,0,0.25);
+  padding: 18px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: inset 0 0 10px rgba(255,0,0,0.1);
+}
+
+/* Logo */
+.cert-card img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  padding: 5px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #ff0000;
+  transition: 0.35s ease;
+}
+
+/* Text */
+.cert-info h3 {
+  color: #ff4d4d;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.cert-info h4 {
+  color: #ddd;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.cert-info p {
+  color: #bbb;
+  font-size: 0.8rem;
+}
+
+/* Hover Effects */
+.cert-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  background: #1a0000;
+  border-color: #ff0000;
+  box-shadow: 
+    0 0 20px rgba(255,0,0,0.4),
+    0 0 40px rgba(255,0,0,0.25);
+}
+
+.cert-card:hover img {
+  box-shadow: 
+    0 0 15px rgba(255,0,0,0.8),
+    0 0 30px rgba(255,0,0,0.6);
+  transform: scale(1.08) rotate(3deg);
+}
+
+
+
 
 
 
@@ -961,7 +1043,7 @@ I like challenging myself, exploring new technologies, and focusing on writing c
 
     <div class="educ-card">
       <div class="educ-date">2023 – 2024</div>
-      <h3>Honours Diploma in Full Stack</h3>
+      <h3>Honors Diploma in Full Stack</h3>
       <h4>Front-end + Back-end foundations</h4>
       <p>Covered HTML, CSS, JS, Python, MySQL basics.</p>
     </div>
@@ -969,7 +1051,7 @@ I like challenging myself, exploring new technologies, and focusing on writing c
     <div class="educ-card">
       <div class="educ-date">2022 – 2023</div>
       <h3>Higher Secondary (HSC)</h3>
-      <h4>Sri Saankara Vidya Kendra </h4>
+      <h4>Sri Shankara Vidya Kendra </h4>
       <p>Commerce with Computer Applications — 86%</p>
     </div>
 
@@ -988,28 +1070,33 @@ I like challenging myself, exploring new technologies, and focusing on writing c
   <h3 style="margin-bottom:10px; color:#ff4d4d;">Technical Skills</h3>
 
   <div class="skill">
-    <p>HTML & CSS <span>90%</span></p>
-    <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
-  </div>
-
-  <div class="skill">
-    <p>JavaScript <span>85%</span></p>
+    <p>HTML & CSS <span>85%</span></p>
     <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
   </div>
 
   <div class="skill">
-    <p>React JS <span>60%</span></p>
+    <p>JavaScript <span>75%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>React <span>40%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:40%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>SQL <span>60%</span></p>
     <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
   </div>
 
   <div class="skill">
-    <p>SQL <span>70%</span></p>
-    <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
+    <p>Java <span>50%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:50%"></div></div>
   </div>
 
-  <div class="skill">
-    <p>Java <span>65%</span></p>
-    <div class="progress"><div class="progress-bar" style="width:65%"></div></div>
+   <div class="skill">
+    <p>Python <span>50%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:50%"></div></div>
   </div>
 
   <div class="skill">
@@ -1018,8 +1105,8 @@ I like challenging myself, exploring new technologies, and focusing on writing c
   </div>
 
   <div class="skill">
-    <p>VS Code <span>100%</span></p>
-    <div class="progress"><div class="progress-bar" style="width:100%"></div></div>
+    <p>VS Code <span>70%</span></p>
+    <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
   </div>
 
   <br>
@@ -1115,58 +1202,68 @@ I like challenging myself, exploring new technologies, and focusing on writing c
 </div>
 
 
-<!-- CERTIFICATIONS SECTION -->
 <section id="certifications">
   <h2>Certifications</h2>
 
+  <div class="cert-grid">
 
-
-  <div class="edu-item">
-    <img src="itv.jpg" alt="Itvedant Logo" class="edu-logo">
-    <div class="edu-details">
-      <h3>Web Development Certificate</h3>
-      <h4>Itvedant Education Pvt. Ltd</h4>
-      <p class="edu-meta"><span>📅 2024</span> | <span>📍 Chennai, India</span></p>
+    <div class="cert-card">
+      <img src="itv.jpg" alt="Itvedant Logo">
+      <div class="cert-info">
+        <h3>SQL Certificate</h3>
+        <h4>Itvedant Education Pvt. Ltd</h4>
+        <p>📅 2025 • Chennai</p>
+      </div>
     </div>
-  </div>
 
-  <div class="edu-item">
-    <img src="itv.jpg" alt="Itvedant Logo" class="edu-logo">
-    <div class="edu-details">
-      <h3>JavaScript Certificate</h3>
-      <h4>Itvedant Education Pvt. Ltd</h4>
-      <p class="edu-meta"><span>📅 2024</span> | <span>📍 Chennai, India</span></p>
+    <div class="cert-card">
+      <img src="itv.jpg" alt="Itvedant Logo">
+      <div class="cert-info">
+        <h3>React Essentials</h3>
+        <h4>Itvedant Education Pvt. Ltd</h4>
+        <p>📅 2025 • Chennai</p>
+      </div>
     </div>
-  </div>
 
-    <!-- React Essentials Certificate -->
-  <div class="edu-item">
-    <img src="itv.jpg" alt="Itvedant Logo" class="edu-logo">
-    <div class="edu-details">
-      <h3>React Essentials Certificate</h3>
-      <h4>Itvedant Education Pvt. Ltd</h4>
-      <p class="edu-meta"><span>📅 2025</span> | <span>📍 Chennai, India</span></p>
+    <div class="cert-card">
+      <img src="itv.jpg" alt="Itvedant Logo">
+      <div class="cert-info">
+        <h3>JavaScript Certificate</h3>
+        <h4>Itvedant Education Pvt. Ltd</h4>
+        <p>📅 2025 • Chennai</p>
+      </div>
     </div>
-  </div>
 
-  <div class="edu-item">
-    <img src="csc.webp" alt="HDFD Logo" class="edu-logo">
-    <div class="edu-details">
-      <h3>Honours Diploma in Full Stack Development</h3>
-      <h4>HDFD Institute</h4>
-      <p class="edu-meta"><span>📅 2023 – 2024</span></p>
+    <div class="cert-card">
+      <img src="itv.jpg" alt="Itvedant Logo">
+      <div class="cert-info">
+        <h3>Web Development Certificate</h3>
+        <h4>Itvedant Education Pvt. Ltd</h4>
+        <p>📅 2025 • Chennai</p>
+      </div>
     </div>
-  </div>
 
-  <div class="edu-item">
-    <img src="images.jpg" alt="Video Editing Logo" class="edu-logo">
-    <div class="edu-details">
-      <h3>Video Editing Certificate</h3>
-      <h4>Independent Learning</h4>
-      <p class="edu-meta"><span>📅 2023</span></p>
+    <div class="cert-card">
+      <img src="csc.webp" alt="HDFD Institute Logo">
+      <div class="cert-info">
+        <h3>Honors Diploma in Full Stack</h3>
+        <h4>HDFD Institute</h4>
+        <p>📅 2023 – 2024</p>
+      </div>
     </div>
+
+    <div class="cert-card">
+      <img src="images.jpg" alt="Video Editing Certificate">
+      <div class="cert-info">
+        <h3>Video Editing Certificate</h3>
+        <h4>Independent Learning</h4>
+        <p>📅 2023</p>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- COUNTERS SECTION -->
 <section id="counters">
