@@ -990,6 +990,21 @@ section h2 .emoji {
   60% { transform: rotate(0deg); }
   100% { transform: rotate(0deg); }
 }
+/* 📱 MOBILE: 2 cards per row for My Achievements */
+@media (max-width: 600px) {
+  .counter-box-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .counter-box h3 {
+    font-size: 2rem;
+  }
+
+  .counter-box p {
+    font-size: 0.9rem;
+  }
+}
 
 
 </style>
