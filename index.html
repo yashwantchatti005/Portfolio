@@ -963,21 +963,36 @@ html {
     0 0 30px rgba(255,0,0,0.6);
   transform: scale(1.08) rotate(3deg);
 }
+.emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  color: initial !important;
+  -webkit-text-fill-color: initial !important;
+}
+section h2 .emoji {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
 
+.emoji {
+  display: inline-block;
+  animation: wave 1.8s infinite;
+  transform-origin: 70% 70%;
+}
 
-
-
-
-
-
-
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
 
 
 </style>
-
-
-
-
 </head>
 <body>
 <header>
@@ -1005,9 +1020,9 @@ html {
 <!-- HERO -->
 <section class="hero">
   <img src="IMG_20250815_101050 (7).jpg" alt="My Photo">
-  <h2>Hello, I'm Yash 👋</h2>
+  <h2>Hello, I'm Yash <span class="emoji">👋🏻</span></h2>
   <p class="typing"></p>
-    <a href="YASHWANT RESUME.pdf" download class="resume-btn">
+    <a href="Yashwant Resume.pdf" download class="resume-btn">
     <i class="fa-solid fa-download"></i> Download Resume
   </a>
 </section>
@@ -1167,25 +1182,36 @@ I like challenging myself, exploring new technologies, and focusing on writing c
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects">
+
     <div class="card" onclick="openModal('To-Do List')">
       <h3>To-Do List</h3>
-      <p>Task management app built using JavaScript.</p>
+      <p>A clean and interactive task manager</p>
       <a href="https://yashwantchatti005.github.io/to-dolist/" target="_blank" class="project-link">Live Demo</a>
     </div>
+
     <div class="card" onclick="openModal('E-Commerce Website')">
       <h3>E-Commerce Website</h3>
-      <p>Mini online store with product listing, cart, and checkout functionality.</p>
+      <p>A mini shopping website with products, cart and checkout.</p>
       <a href="https://yashwantchatti005.github.io/Yash-mart/" target="_blank" class="project-link">Live Demo</a>
     </div>
+
     <div class="card" onclick="openModal('Chat Application')">
       <h3>Chat Application</h3>
-      <p>Real-time messaging app using WebSockets or Firebase.</p>
+      <p>Real-time chat app using Firebase.</p>
       <a href="https://yashwantchatti005.github.io/chatapplication/" target="_blank" class="project-link">Live Demo</a>
     </div>
-    <div class="card" onclick="openModal('Portfolio Website')">
-      <h3>Portfolio Website</h3>
+
+    <div class="card" onclick="openModal('MyExpense')">
+      <h3>MyExpense</h3>
+  <p>A personal expense tracker to record, analyze, and visualize daily expenses.</p>
+   <a href="https://sadvik005.github.io/MyExpense/" target="_blank" class="project-link">Live Demo</a>
+    </div>
+
+        <div class="card" onclick="openModal('Portfolio Website')">
+      <h3>Portfolio</h3>
       <p>This website itself is a project.</p>
     </div>
+
   </div>
 </section>
 
@@ -1370,7 +1396,7 @@ window.addEventListener("scroll", function () {
   // 🔥 PROJECT MODAL DATA
 const projectInfo = {
   "To-Do List": {
-    desc: "A clean and interactive task manager built using HTML, CSS & JavaScript.",
+    desc: "A clean and interactive task manager.",
     tech: "Tech Stack: HTML • CSS • JavaScript",
     link: "https://yashwantchatti005.github.io/to-dolist/"
   },
@@ -1382,17 +1408,24 @@ const projectInfo = {
   },
 
   "Chat Application": {
-    desc: "Real-time chat app using Firebase / WebSockets.",
-    tech: "Tech Stack: JavaScript • Firebase",
+    desc: "Real-time chat app using Firebase.",
+    tech: "Tech Stack: HTML • CSS • JavaScript • Firebase",
     link: "https://yashwantchatti005.github.io/chatapplication/"
+  },
+
+  "MyExpense": {
+    desc: "A personal expense tracker to record, analyze, and visualize daily expenses.",
+    tech: "Tech Stack: HTML • CSS • JavaScript • Chart.js",
+    link: "https://sadvik005.github.io/MyExpense/"
   },
 
   "Portfolio Website": {
     desc: "This portfolio itself. Fully responsive and animated.",
-    tech: "Tech Stack: HTML • CSS • JS",
+    tech: "Tech Stack: HTML • CSS • JavaScript",
     link: "#"
   }
 };
+
 
 // 🔥 OPEN MODAL
 function openModal(projectName){
@@ -1472,8 +1505,6 @@ document.getElementById("projectModal").addEventListener("click", function(e){
 </script>
 </body>
 </html>
-
-
 
 
 
