@@ -1362,6 +1362,16 @@ I like challenging myself, exploring new technologies, and focusing on writing c
 
 </footer>
 
+<!-- EMAIL STATUS MODAL -->
+<div id="emailModal" class="project-modal">
+  <div class="project-modal-content">
+    <h2 class="modal-title" id="emailModalTitle"></h2>
+    <p id="emailModalMessage"></p>
+    <button class="close-project-btn" onclick="closeEmailModal()">OK</button>
+  </div>
+</div>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
@@ -1488,18 +1498,24 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     email: document.getElementById("email").value,
     message: document.getElementById("message").value
   })
-  .then(() => {
-    alert("✅ Message sent successfully!");
-    btn.textContent = "Send";
-    btn.disabled = false;
-    document.getElementById("contactForm").reset();
-  })
-  .catch((error) => {
-    console.error("EmailJS Error:", error);
-    alert("❌ Failed to send message. Please try again.");
-    btn.textContent = "Send";
-    btn.disabled = false;
-  });
+.then(() => {
+  showEmailModal(
+    "✅ Message Sent",
+    "Thanks for reaching out! I’ll get back to you soon."
+  );
+  btn.textContent = "Send";
+  btn.disabled = false;
+  document.getElementById("contactForm").reset();
+})
+.catch((error) => {
+  console.error("EmailJS Error:", error);
+  showEmailModal(
+    "❌ Message Failed",
+    "Something went wrong. Please try again later."
+  );
+  btn.textContent = "Send";
+  btn.disabled = false;
+});
 });
 
 
@@ -1545,6 +1561,22 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
   items.forEach(item => observer.observe(item));
 })();
+
+function showEmailModal(title, message) {
+  const modal = document.getElementById("emailModal");
+  document.getElementById("emailModalTitle").textContent = title;
+  document.getElementById("emailModalMessage").textContent = message;
+
+  modal.style.display = "flex";
+  setTimeout(() => modal.classList.add("show"), 10);
+}
+
+function closeEmailModal() {
+  const modal = document.getElementById("emailModal");
+  modal.classList.remove("show");
+  setTimeout(() => modal.style.display = "none", 250);
+}
+
 
 
 
