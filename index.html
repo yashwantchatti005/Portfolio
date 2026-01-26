@@ -1363,6 +1363,13 @@ I like challenging myself, exploring new technologies, and focusing on writing c
 </footer>
 
 
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function () {
+    emailjs.init("DwCcioOqJja2ObmfLHxjR");
+  })();
+</script>
 
 
 
@@ -1469,10 +1476,32 @@ document.getElementById("projectModal").addEventListener("click", function(e){
 
 
   
-  // Contact form alert
-  document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault(); alert("Thank you! I will get back to you soon."); this.reset();
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const btn = this.querySelector("button");
+  btn.textContent = "Sending...";
+  btn.disabled = true;
+
+  emailjs.send("service_lie3zjj", "template_18b1jim", {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  })
+  .then(() => {
+    alert("✅ Message sent successfully!");
+    btn.textContent = "Send";
+    btn.disabled = false;
+    document.getElementById("contactForm").reset();
+  })
+  .catch((error) => {
+    console.error("EmailJS Error:", error);
+    alert("❌ Failed to send message. Please try again.");
+    btn.textContent = "Send";
+    btn.disabled = false;
   });
+});
+
 
   // Toggle mobile nav
   function toggleNav(){document.getElementById("navbar").classList.toggle("active");}
@@ -1517,7 +1546,10 @@ document.getElementById("projectModal").addEventListener("click", function(e){
   items.forEach(item => observer.observe(item));
 })();
 
+
+
 </script>
+
 </body>
 </html>
 
