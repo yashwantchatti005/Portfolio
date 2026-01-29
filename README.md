@@ -1,4 +1,4 @@
-# 🌐 Yashwant Kumar — Portfolio
+# 🌐 Yashwant Chatti — Portfolio
 
 Welcome to my personal portfolio website!  
 This is a responsive, interactive portfolio built to showcase my skills, projects, experience, certifications, and achievements as a Full Stack Developer Trainee.
