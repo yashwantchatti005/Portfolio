@@ -1089,7 +1089,7 @@ section h2 .emoji {
 .hamburger {
   width: 40px;
   height: 34px;
-  display: none;          /* ✅ hidden by default */
+  display: none;          /* ✅ HIDDEN BY DEFAULT */
   flex-direction: column;
   justify-content: space-between;
   background: none;
@@ -1099,7 +1099,7 @@ section h2 .emoji {
 }
 @media (max-width: 768px) {
   .hamburger {
-    display: flex;        /* ✅ mobile only */
+    display: flex;        /* ✅ MOBILE ONLY */
   }
 }
 
@@ -1139,50 +1139,6 @@ section h2 .emoji {
     padding-top: 80px;
     z-index: 1100;
   }
-@media (max-width: 768px) {
-
-  nav#navbar ul {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    padding: 20px 25px;
-  }
-
-  nav#navbar ul li {
-    list-style: none;
-  }
-
-  nav#navbar ul li a {
-    display: block;
-    width: 100%;
-    padding: 14px 18px;
-    border-radius: 12px;
-
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 0, 0, 0.25);
-
-    transition: all 0.35s ease;
-  }
-}
-@media (max-width: 768px) {
-
-  nav#navbar ul li a:hover {
-    background: linear-gradient(135deg, #ff0000, #800000);
-    color: #ffffff;
-
-    transform: translateX(6px);
-    box-shadow:
-      0 0 12px rgba(255, 0, 0, 0.7),
-      0 0 25px rgba(255, 0, 0, 0.4);
-  }
-}
-
-
 
   nav#navbar.active {
     right: 0;
@@ -1194,6 +1150,17 @@ section h2 .emoji {
   }
 }
 
+/* 🔥 FORCE REMOVE NAVBAR DOTS (FINAL FIX) */
+#navbar ul,
+#navbar li {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#navbar li::marker {
+  content: "" !important;
+}
 
 </style>
 </head>
