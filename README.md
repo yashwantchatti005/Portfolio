@@ -3,14 +3,14 @@
 Welcome to my personal portfolio website!  
 This is a responsive, interactive portfolio built to showcase my skills, projects, experience, certifications, and achievements as a Full Stack Developer Trainee.
 
-🔗 **Live Demo:** https://yashwantchatti005.github.io/Portfolio/ :contentReference[oaicite:1]{index=1}
+🔗 **Live Demo:** https://yashwantchatti005.github.io/Portfolio/
 
 ---
 
 ## 🧠 About
 
 I am a BCA student specializing in Full Stack Web Development.  
-I enjoy building sleek, functional, and impactful web applications and continuously learning new technologies. This portfolio highlights my projects, experience, and technical abilities — built using pure HTML, CSS, and JavaScript. :contentReference[oaicite:2]{index=2}
+I enjoy building sleek, functional, and impactful web applications and continuously learning new technologies. This portfolio highlights my projects, experience, and technical abilities — built using pure HTML, CSS, and JavaScript.
 
 ---
 
@@ -36,7 +36,7 @@ This project uses:
 - **Font Awesome icons**
 - **EmailJS** for contact form functionality
 
-No backend server is required — everything is static and hosted on GitHub Pages. :contentReference[oaicite:3]{index=3}
+No backend server is required — everything is static and hosted on GitHub Pages.
 
 ---
 
