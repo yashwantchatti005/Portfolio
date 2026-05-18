@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yashwant | Full Stack Developer</title>
   <meta name="description" content="Yashwant Kumar | Full Stack Developer Portfolio">
-  
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2300000f'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='%237c3aed' font-family='Arial' font-weight='900'>Y</text></svg>">
-  
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2304060f'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='%23e62020' font-family='Arial' font-weight='900'>Y</text></svg>">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
-
 </head>
 <body>
 
@@ -22,10 +21,60 @@
   <div class="planet planet-1"></div>
   <div class="planet planet-2"></div>
 
+  <!-- SPIDER WEBS SVG -->
+  <div id="spiderWebs">
+    <svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.18">
+      <!-- Top-left web -->
+      <g stroke="rgba(230,32,32,0.6)" stroke-width="0.7">
+        <line x1="0" y1="0" x2="180" y2="220"/>
+        <line x1="0" y1="0" x2="250" y2="140"/>
+        <line x1="0" y1="0" x2="310" y2="50"/>
+        <line x1="0" y1="0" x2="80" y2="300"/>
+        <line x1="0" y1="0" x2="20" y2="340"/>
+        <!-- arc lines -->
+        <path d="M 30 0 Q 120 30 90 120" stroke-width="0.5"/>
+        <path d="M 70 0 Q 160 60 130 160" stroke-width="0.5"/>
+        <path d="M 120 0 Q 200 90 170 200" stroke-width="0.5"/>
+        <path d="M 0 40 Q 60 100 30 200" stroke-width="0.5"/>
+        <path d="M 0 90 Q 40 160 10 270" stroke-width="0.5"/>
+        <path d="M 0 150 Q 25 220 0 310" stroke-width="0.5"/>
+      </g>
+      <!-- Top-right web -->
+      <g stroke="rgba(30,58,138,0.8)" stroke-width="0.7">
+        <line x1="1400" y1="0" x2="1220" y2="230"/>
+        <line x1="1400" y1="0" x2="1150" y2="150"/>
+        <line x1="1400" y1="0" x2="1090" y2="60"/>
+        <line x1="1400" y1="0" x2="1320" y2="310"/>
+        <line x1="1400" y1="0" x2="1380" y2="360"/>
+        <path d="M 1370 0 Q 1280 40 1310 140" stroke-width="0.5"/>
+        <path d="M 1330 0 Q 1240 70 1270 170" stroke-width="0.5"/>
+        <path d="M 1280 0 Q 1200 100 1230 210" stroke-width="0.5"/>
+        <path d="M 1400 50 Q 1340 110 1370 210" stroke-width="0.5"/>
+        <path d="M 1400 100 Q 1360 170 1390 280" stroke-width="0.5"/>
+      </g>
+    </svg>
+  </div>
+
   <!-- PRELOADER -->
   <div id="preloader">
-    <div class="preloader-ring"></div>
-    <div class="preloader-text">INITIALIZING...</div>
+    <div class="pre-web">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <circle cx="50" cy="50" r="45" stroke="rgba(230,32,32,0.15)" stroke-width="1"/>
+        <circle cx="50" cy="50" r="30" stroke="rgba(230,32,32,0.2)" stroke-width="1"/>
+        <circle cx="50" cy="50" r="15" stroke="rgba(230,32,32,0.3)" stroke-width="1"/>
+        <line x1="50" y1="5" x2="50" y2="95" stroke="rgba(230,32,32,0.4)" stroke-width="0.8"/>
+        <line x1="5" y1="50" x2="95" y2="50" stroke="rgba(230,32,32,0.4)" stroke-width="0.8"/>
+        <line x1="18" y1="18" x2="82" y2="82" stroke="rgba(230,32,32,0.3)" stroke-width="0.8"/>
+        <line x1="82" y1="18" x2="18" y2="82" stroke="rgba(230,32,32,0.3)" stroke-width="0.8"/>
+        <circle cx="50" cy="50" r="5" fill="#e62020"/>
+        <circle cx="50" cy="50" r="3" fill="#ff4444"/>
+        <!-- spider icon hint -->
+        <text x="50" y="55" font-size="14" text-anchor="middle" fill="#e62020" font-family="Arial" font-weight="900">Y</text>
+      </svg>
+    </div>
+    <div class="pre-logo">YASHWANT</div>
+    <div class="pre-bar"><div class="pre-fill"></div></div>
+    <div class="pre-text">LOADING PORTFOLIO...</div>
   </div>
 
   <!-- CURSOR -->
@@ -41,9 +90,10 @@
   <!-- HEADER -->
   <header id="header">
     <a href="#" class="logo">
-      <span class="logo-bracket">&lt;</span>
-      <span class="logo-name">Yashwant</span>
-      <span class="logo-bracket">/&gt;</span>
+      <span style="color:#e62020;filter:drop-shadow(0 0 8px rgba(230,32,32,0.6))">⬡</span>
+      <span class="logo-spider">YASH</span>
+      <span style="color:#f8f8ff">WANT</span>
+      <span class="logo-dot"></span>
     </a>
     <button class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
@@ -61,7 +111,6 @@
       </ul>
     </nav>
   </header>
-  <div id="navOverlay"></div>
 
   <main>
 
@@ -70,9 +119,9 @@
       <div class="hero-left">
         <div class="hero-badge">
           <span class="badge-dot"></span>
-          Available for opportunities
+          AVAILABLE FOR OPPORTUNITIES
         </div>
-        <p class="hero-greeting">Hello, I'm</p>
+        <p class="hero-greeting">// Hello, I'm</p>
         <h1 class="hero-name">
           <span class="name-word">Yashwant</span>
           <span class="name-word name-colored">Kumar</span>
@@ -83,9 +132,9 @@
           <span class="cursor-blink"></span>
         </div>
         <p class="hero-desc">
-          A passionate full-stack developer building sleek, functional web apps. 
-          Pursuing BCA while exploring frontend & backend technologies with a focus 
-          on clean, efficient code. 🚀
+          A passionate full-stack developer building sleek, functional web apps.
+          Pursuing BCA while exploring frontend & backend technologies with a focus
+          on clean, efficient code. 🕷️
         </p>
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">
@@ -113,21 +162,25 @@
           <div class="orbit-ring orbit-1"><div class="orbit-dot orbit-dot-1"></div></div>
           <div class="orbit-ring orbit-2"><div class="orbit-dot orbit-dot-2"></div></div>
           <div class="profile-hex">
-            <div class="profile-glow-ring"></div>
+            <div class="profile-web-ring">
+              <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <circle cx="130" cy="130" r="120" stroke="rgba(230,32,32,0.15)" stroke-width="1"/>
+                <circle cx="130" cy="130" r="90" stroke="rgba(230,32,32,0.12)" stroke-width="1"/>
+                <circle cx="130" cy="130" r="60" stroke="rgba(230,32,32,0.1)" stroke-width="1"/>
+                <line x1="130" y1="10" x2="130" y2="250" stroke="rgba(230,32,32,0.1)" stroke-width="0.8"/>
+                <line x1="10" y1="130" x2="250" y2="130" stroke="rgba(230,32,32,0.1)" stroke-width="0.8"/>
+                <line x1="45" y1="45" x2="215" y2="215" stroke="rgba(230,32,32,0.08)" stroke-width="0.8"/>
+                <line x1="215" y1="45" x2="45" y2="215" stroke="rgba(230,32,32,0.08)" stroke-width="0.8"/>
+                <!-- red arc highlight -->
+                <path d="M 130 10 A 120 120 0 0 1 250 130" stroke="rgba(230,32,32,0.5)" stroke-width="1.5"/>
+              </svg>
+            </div>
             <img src="IMG_20250815_101050 (7).jpg" alt="Yashwant" class="profile-img">
           </div>
-          <div class="float-badge float-badge-1">
-            <i class="fas fa-code"></i> Frontend
-          </div>
-          <div class="float-badge float-badge-2">
-            <i class="fas fa-server"></i> Backend
-          </div>
-          <div class="float-badge float-badge-3">
-            <i class="fab fa-react"></i> React
-          </div>
-          <div class="float-badge float-badge-4">
-            <i class="fas fa-database"></i> SQL
-          </div>
+          <div class="float-badge float-badge-1"><i class="fas fa-code"></i> Frontend</div>
+          <div class="float-badge float-badge-2"><i class="fas fa-server"></i> Backend</div>
+          <div class="float-badge float-badge-3"><i class="fab fa-react"></i> React</div>
+          <div class="float-badge float-badge-4"><i class="fas fa-database"></i> SQL</div>
         </div>
       </div>
     </div>
@@ -138,38 +191,18 @@
         <div class="section-header reveal">
           <div class="section-tag">Introduction</div>
           <h2 class="section-title">About <span class="highlight">Me</span></h2>
+          <div class="web-divider"></div>
         </div>
         <div class="about-grid">
           <div class="about-text reveal">
-            <p>
-              Hi, I'm <strong>Yashwant</strong>, a full-stack development enthusiast who enjoys 
-              building sleek, functional, and impactful web applications. I'm pursuing 
-              <strong>BCA</strong> and have already worked on several projects — from simple tools 
-              to full-stack applications — during my internship and personal learning journey.
-            </p>
-            <p>
-              I like challenging myself, exploring new technologies, and focusing on writing 
-              <strong>clean, efficient code</strong>. My goal is to grow as a developer and 
-              contribute to meaningful tech solutions.
-            </p>
+            <p>Hi, I'm <strong>Yashwant</strong>, a full-stack development enthusiast who enjoys building sleek, functional, and impactful web applications. I'm pursuing <strong>BCA</strong> and have already worked on several projects — from simple tools to full-stack applications — during my internship and personal learning journey.</p>
+            <p>I like challenging myself, exploring new technologies, and focusing on writing <strong>clean, efficient code</strong>. My goal is to grow as a developer and contribute to meaningful tech solutions.</p>
           </div>
           <div class="about-stats reveal">
-            <div class="stat-box">
-              <div class="stat-num">10+</div>
-              <div class="stat-label">Projects</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">1</div>
-              <div class="stat-label">Internship</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">6+</div>
-              <div class="stat-label">Certificates</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">100+</div>
-              <div class="stat-label">Commits</div>
-            </div>
+            <div class="stat-box"><div class="stat-num">10+</div><div class="stat-label">Projects</div></div>
+            <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Internship</div></div>
+            <div class="stat-box"><div class="stat-num">6+</div><div class="stat-label">Certificates</div></div>
+            <div class="stat-box"><div class="stat-num">100+</div><div class="stat-label">Commits</div></div>
           </div>
         </div>
       </div>
@@ -181,16 +214,14 @@
         <div class="section-header reveal">
           <div class="section-tag">Learning Path</div>
           <h2 class="section-title">My <span class="highlight">Education</span></h2>
+          <div class="web-divider"></div>
         </div>
         <div class="timeline">
           <div class="timeline-item reveal">
             <div class="timeline-dot"></div>
             <div class="edu-card">
               <div class="edu-header">
-                <div>
-                  <h3>Bachelor of Computer Applications</h3>
-                  <h4>Dwaraka Doss Goverdhan Doss Vaishnav College — Chennai</h4>
-                </div>
+                <div><h3>Bachelor of Computer Applications</h3><h4>Dwaraka Doss Goverdhan Doss Vaishnav College — Chennai</h4></div>
                 <span class="edu-year">2023 – 2026</span>
               </div>
               <p>GPA: 8.4 / 10</p>
@@ -200,10 +231,7 @@
             <div class="timeline-dot"></div>
             <div class="edu-card">
               <div class="edu-header">
-                <div>
-                  <h3>Master in Full Stack Web Development</h3>
-                  <h4>Itvedant Education Pvt. Ltd</h4>
-                </div>
+                <div><h3>Master in Full Stack Web Development</h3><h4>Itvedant Education Pvt. Ltd</h4></div>
                 <span class="edu-year">2025 – 2026</span>
               </div>
               <p>Advanced full-stack development training.</p>
@@ -213,10 +241,7 @@
             <div class="timeline-dot"></div>
             <div class="edu-card">
               <div class="edu-header">
-                <div>
-                  <h3>Honors Diploma in Full Stack</h3>
-                  <h4>Front-end + Back-end foundations</h4>
-                </div>
+                <div><h3>Honors Diploma in Full Stack</h3><h4>Front-end + Back-end foundations</h4></div>
                 <span class="edu-year">2023 – 2024</span>
               </div>
               <p>Covered HTML, CSS, JS, Python, MySQL basics.</p>
@@ -226,10 +251,7 @@
             <div class="timeline-dot"></div>
             <div class="edu-card">
               <div class="edu-header">
-                <div>
-                  <h3>Higher Secondary (HSC)</h3>
-                  <h4>Sri Shankara Vidya Kendra</h4>
-                </div>
+                <div><h3>Higher Secondary (HSC)</h3><h4>Sri Shankara Vidya Kendra</h4></div>
                 <span class="edu-year">2022 – 2023</span>
               </div>
               <p>Commerce with Computer Applications — 86%</p>
@@ -240,161 +262,131 @@
     </section>
 
     <!-- ===== SKILLS ===== -->
-  <section id="skills">
-  <div class="section-wrapper">
-    <div class="section-header reveal">
-      <div class="section-tag">Abilities</div>
-      <h2 class="section-title">Skills & <span class="highlight">Languages</span></h2>
-    </div>
-
-    <!-- SKILLS GRID -->
-    <div class="sk2-grid reveal">
-
-      <div class="sk2-card sk2-purple">
-        <div class="sk2-head">
-          <div class="sk2-ico"><i class="fas fa-code"></i></div>
-          <span class="sk2-pct">95%</span>
+    <section id="skills">
+      <div class="section-wrapper">
+        <div class="section-header reveal">
+          <div class="section-tag">Abilities</div>
+          <h2 class="section-title">Skills & <span class="highlight">Languages</span></h2>
+          <div class="web-divider"></div>
         </div>
-        <div class="sk2-name">HTML & CSS</div>
-        <div class="sk2-sub">Frontend · Tailwind · Bootstrap</div>
-        <div class="sk2-track"><div class="sk2-fill" style="width:95%"></div></div>
-        <div class="sk2-tags"><span>HTML5</span><span>CSS3</span><span>Tailwind</span><span>Bootstrap</span></div>
-      </div>
 
-      <div class="sk2-card sk2-amber">
-        <div class="sk2-head">
-          <div class="sk2-ico"><i class="fab fa-js-square"></i></div>
-          <span class="sk2-pct">75%</span>
-        </div>
-        <div class="sk2-name">JavaScript</div>
-        <div class="sk2-sub">ES6+ · DOM · Async</div>
-        <div class="sk2-track"><div class="sk2-fill" style="width:75%"></div></div>
-        <div class="sk2-tags"><span>ES6+</span><span>Fetch API</span><span>Chart.js</span></div>
-      </div>
+        <div class="sk2-grid reveal">
 
-      <div class="sk2-card sk2-blue">
-        <div class="sk2-head">
-          <div class="sk2-ico"><i class="fab fa-react"></i></div>
-          <span class="sk2-pct">40%</span>
-        </div>
-        <div class="sk2-name">React</div>
-        <div class="sk2-sub">Components · Hooks · Router</div>
-        <div class="sk2-track"><div class="sk2-fill" style="width:40%"></div></div>
-        <div class="sk2-tags"><span>Hooks</span><span>State</span><span>Router</span></div>
-      </div>
-
-      <div class="sk2-card sk2-teal">
-        <div class="sk2-head">
-          <div class="sk2-ico"><i class="fas fa-database"></i></div>
-          <span class="sk2-pct">90%</span>
-        </div>
-        <div class="sk2-name">SQL</div>
-        <div class="sk2-sub">MySQL · Queries · Joins</div>
-        <div class="sk2-track"><div class="sk2-fill" style="width:90%"></div></div>
-        <div class="sk2-tags"><span>MySQL</span><span>Joins</span><span>Procedures</span></div>
-      </div>
-
-      <div class="sk2-card sk2-pink">
-        <div class="sk2-head">
-          <div class="sk2-ico"><i class="fab fa-python"></i></div>
-          <span class="sk2-pct">60%</span>
-        </div>
-        <div class="sk2-name">Python</div>
-        <div class="sk2-sub">Scripting · Backend</div>
-        <div class="sk2-track"><div class="sk2-fill" style="width:60%"></div></div>
-        <div class="sk2-tags"><span>OOP</span><span>Scripts</span><span>Flask</span></div>
-      </div>
-
-            <div class="sk2-card sk2-orange">
-        <div class="sk2-head">
-          <div class="sk2-ico"><i class="fab fa-java"></i></div>
-          <span class="sk2-pct">80%</span>
-        </div>
-        <div class="sk2-name">Java</div>
-        <div class="sk2-sub">OOP · Collections · Streams</div>
-        <div class="sk2-track"><div class="sk2-fill" style="width:80%"></div></div>
-        <div class="sk2-tags"><span>OOP</span><span>Collections</span><span>Streams</span><span>JDK</span></div>
-      </div>
-
-      <div class="sk2-card sk2-green">
-        <div class="sk2-head">
-          <div class="sk2-ico"><i class="fas fa-leaf"></i></div>
-          <span class="sk2-pct">70%</span>
-        </div>
-        <div class="sk2-name">Spring Boot</div>
-        <div class="sk2-sub">REST APIs · MVC · JPA</div>
-        <div class="sk2-track"><div class="sk2-fill" style="width:70%"></div></div>
-        <div class="sk2-tags"><span>REST</span><span>JPA</span><span>MVC</span><span>Maven</span></div>
-      </div>
-
-      <div class="sk2-card sk2-coral">
-        <div class="sk2-head">
-          <div class="sk2-ico"><i class="fab fa-git-alt"></i></div>
-          <span class="sk2-pct">85%</span>
-        </div>
-        <div class="sk2-name">Git & GitHub</div>
-        <div class="sk2-sub">Version control</div>
-        <div class="sk2-track"><div class="sk2-fill" style="width:85%"></div></div>
-        <div class="sk2-tags"><span>Commits</span><span>Branches</span><span>PRs</span></div>
-      </div>
-
-    </div><!-- /sk2-grid -->
-
-    <!-- LANGUAGES -->
-    <div class="lang2-panel reveal">
-      <div class="lang2-label"><i class="fas fa-language"></i> &nbsp;SPOKEN LANGUAGES</div>
-      <div class="lang2-grid">
-
-        <div class="lang2-card">
-          <span class="lang2-flag">🇬🇧</span>
-          <div class="lang2-body">
-            <div class="lang2-name">English</div>
-            <div class="lang2-track"><div class="lang2-fill" style="width:100%;background:linear-gradient(90deg,#7c3aed,#a855f7)"></div></div>
-            <div class="lang2-lvl">Fluent</div>
+          <div class="sk2-card sk2-red">
+            <div class="sk2-head"><div class="sk2-ico"><i class="fas fa-code"></i></div><span class="sk2-pct">85%</span></div>
+            <div class="sk2-name">HTML & CSS</div>
+            <div class="sk2-sub">Frontend · Tailwind · Bootstrap</div>
+            <div class="sk2-track"><div class="sk2-fill" style="width:85%"></div></div>
+            <div class="sk2-tags"><span>HTML5</span><span>CSS3</span><span>Tailwind</span><span>Bootstrap</span></div>
           </div>
-        </div>
 
-        <div class="lang2-card">
-          <span class="lang2-flag">🇮🇳</span>
-          <div class="lang2-body">
-            <div class="lang2-name">Telugu</div>
-            <div class="lang2-track"><div class="lang2-fill" style="width:100%;background:linear-gradient(90deg,#7c3aed,#a855f7)"></div></div>
-            <div class="lang2-lvl">Native</div>
+          <div class="sk2-card sk2-amber">
+            <div class="sk2-head"><div class="sk2-ico"><i class="fab fa-js-square"></i></div><span class="sk2-pct">75%</span></div>
+            <div class="sk2-name">JavaScript</div>
+            <div class="sk2-sub">ES6+ · DOM · Async</div>
+            <div class="sk2-track"><div class="sk2-fill" style="width:75%"></div></div>
+            <div class="sk2-tags"><span>ES6+</span><span>Fetch API</span><span>Chart.js</span></div>
           </div>
-        </div>
 
-        <div class="lang2-card">
-          <span class="lang2-flag">🇮🇳</span>
-          <div class="lang2-body">
-            <div class="lang2-name">Tamil</div>
-            <div class="lang2-track"><div class="lang2-fill" style="width:100%;background:linear-gradient(90deg,#06b6d4,#10b981)"></div></div>
-            <div class="lang2-lvl">Fluent</div>
+          <div class="sk2-card sk2-blue">
+            <div class="sk2-head"><div class="sk2-ico"><i class="fab fa-react"></i></div><span class="sk2-pct">40%</span></div>
+            <div class="sk2-name">React</div>
+            <div class="sk2-sub">Components · Hooks · Router</div>
+            <div class="sk2-track"><div class="sk2-fill" style="width:40%"></div></div>
+            <div class="sk2-tags"><span>Hooks</span><span>State</span><span>Router</span></div>
           </div>
-        </div>
 
-        <div class="lang2-card">
-          <span class="lang2-flag">🇮🇳</span>
-          <div class="lang2-body">
-            <div class="lang2-name">Hindi</div>
-            <div class="lang2-track"><div class="lang2-fill" style="width:50%;background:linear-gradient(90deg,#f59e0b,#ef9f27)"></div></div>
-            <div class="lang2-lvl">Conversational</div>
+          <div class="sk2-card sk2-teal">
+            <div class="sk2-head"><div class="sk2-ico"><i class="fas fa-database"></i></div><span class="sk2-pct">60%</span></div>
+            <div class="sk2-name">SQL</div>
+            <div class="sk2-sub">MySQL · Queries · Joins</div>
+            <div class="sk2-track"><div class="sk2-fill" style="width:60%"></div></div>
+            <div class="sk2-tags"><span>MySQL</span><span>Joins</span><span>Procedures</span></div>
           </div>
+
+          <div class="sk2-card sk2-pink">
+            <div class="sk2-head"><div class="sk2-ico"><i class="fab fa-python"></i></div><span class="sk2-pct">50%</span></div>
+            <div class="sk2-name">Python</div>
+            <div class="sk2-sub">Scripting · Backend</div>
+            <div class="sk2-track"><div class="sk2-fill" style="width:50%"></div></div>
+            <div class="sk2-tags"><span>OOP</span><span>Scripts</span><span>Flask</span></div>
+          </div>
+
+          <div class="sk2-card sk2-orange">
+            <div class="sk2-head"><div class="sk2-ico"><i class="fab fa-java"></i></div><span class="sk2-pct">65%</span></div>
+            <div class="sk2-name">Java</div>
+            <div class="sk2-sub">OOP · Collections · Streams</div>
+            <div class="sk2-track"><div class="sk2-fill" style="width:65%"></div></div>
+            <div class="sk2-tags"><span>OOP</span><span>Collections</span><span>Streams</span><span>JDK</span></div>
+          </div>
+
+          <div class="sk2-card sk2-green">
+            <div class="sk2-head"><div class="sk2-ico"><i class="fas fa-leaf"></i></div><span class="sk2-pct">55%</span></div>
+            <div class="sk2-name">Spring Boot</div>
+            <div class="sk2-sub">REST APIs · MVC · JPA</div>
+            <div class="sk2-track"><div class="sk2-fill" style="width:55%"></div></div>
+            <div class="sk2-tags"><span>REST</span><span>JPA</span><span>MVC</span><span>Maven</span></div>
+          </div>
+
+          <div class="sk2-card sk2-purple">
+            <div class="sk2-head"><div class="sk2-ico"><i class="fab fa-git-alt"></i></div><span class="sk2-pct">45%</span></div>
+            <div class="sk2-name">Git & GitHub</div>
+            <div class="sk2-sub">Version control</div>
+            <div class="sk2-track"><div class="sk2-fill" style="width:45%"></div></div>
+            <div class="sk2-tags"><span>Commits</span><span>Branches</span><span>PRs</span></div>
+          </div>
+
         </div>
 
-        <div class="lang2-card lang2-full">
-          <span class="lang2-flag">🇩🇪</span>
-          <div class="lang2-body">
-            <div class="lang2-name">German</div>
-            <div class="lang2-track"><div class="lang2-fill" style="width:35%;background:linear-gradient(90deg,#ec4899,#d4537e)"></div></div>
-            <div class="lang2-lvl">Basic</div>
+        <!-- LANGUAGES -->
+        <div class="lang2-panel reveal">
+          <div class="lang2-label"><i class="fas fa-language"></i> &nbsp; SPOKEN LANGUAGES</div>
+          <div class="lang2-grid">
+            <div class="lang2-card">
+              <span class="lang2-flag">🇬🇧</span>
+              <div class="lang2-body">
+                <div class="lang2-name">English</div>
+                <div class="lang2-track"><div class="lang2-fill" style="width:100%;background:linear-gradient(90deg,#a80000,#e62020)"></div></div>
+                <div class="lang2-lvl">Fluent</div>
+              </div>
+            </div>
+            <div class="lang2-card">
+              <span class="lang2-flag">🇮🇳</span>
+              <div class="lang2-body">
+                <div class="lang2-name">Telugu</div>
+                <div class="lang2-track"><div class="lang2-fill" style="width:100%;background:linear-gradient(90deg,#a80000,#e62020)"></div></div>
+                <div class="lang2-lvl">Native</div>
+              </div>
+            </div>
+            <div class="lang2-card">
+              <span class="lang2-flag">🇮🇳</span>
+              <div class="lang2-body">
+                <div class="lang2-name">Tamil</div>
+                <div class="lang2-track"><div class="lang2-fill" style="width:100%;background:linear-gradient(90deg,#1e3a8a,#60a5fa)"></div></div>
+                <div class="lang2-lvl">Fluent</div>
+              </div>
+            </div>
+            <div class="lang2-card">
+              <span class="lang2-flag">🇮🇳</span>
+              <div class="lang2-body">
+                <div class="lang2-name">Hindi</div>
+                <div class="lang2-track"><div class="lang2-fill" style="width:40%;background:linear-gradient(90deg,#d97706,#f59e0b)"></div></div>
+                <div class="lang2-lvl">Conversational</div>
+              </div>
+            </div>
+            <div class="lang2-card lang2-full">
+              <span class="lang2-flag">🇩🇪</span>
+              <div class="lang2-body">
+                <div class="lang2-name">German</div>
+                <div class="lang2-track"><div class="lang2-fill" style="width:25%;background:linear-gradient(90deg,#db2777,#ec4899)"></div></div>
+                <div class="lang2-lvl">Basic</div>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
-    </div>
-
-  </div>
-</section>
+    </section>
 
     <!-- ===== EXPERIENCE ===== -->
     <section id="experience">
@@ -402,12 +394,11 @@
         <div class="section-header reveal">
           <div class="section-tag">Work</div>
           <h2 class="section-title">My <span class="highlight">Experience</span></h2>
+          <div class="web-divider"></div>
         </div>
         <div class="exp-card reveal">
           <div class="exp-inner">
-            <div class="exp-logo-wrap">
-              <img src="um.jpg" alt="Unified Mentor">
-            </div>
+            <div class="exp-logo-wrap"><img src="um.jpg" alt="Unified Mentor"></div>
             <div class="exp-details">
               <div class="exp-role">Web Development Intern</div>
               <div class="exp-company">Unified Mentor</div>
@@ -415,10 +406,7 @@
                 <span class="exp-tag"><i class="fas fa-calendar-alt"></i> March 2025 – April 2025</span>
                 <span class="exp-tag"><i class="fas fa-map-marker-alt"></i> Remote</span>
               </div>
-              <p class="exp-desc">
-                Worked on building projects like To-Do List App, Chat Application, and contributed 
-                to front-end UI development using HTML, CSS, JavaScript and Firebase.
-              </p>
+              <p class="exp-desc">Worked on building projects like To-Do List App, Chat Application, and contributed to front-end UI development using HTML, CSS, JavaScript and Firebase.</p>
             </div>
           </div>
         </div>
@@ -426,162 +414,143 @@
     </section>
 
     <!-- ===== PROJECTS ===== -->
-
+<!-- ===== PROJECTS ===== -->
 <section id="projects">
   <div class="section-wrapper">
     <div class="section-header reveal">
       <div class="section-tag">Work</div>
       <h2 class="section-title">My <span class="highlight">Projects</span></h2>
+      <div class="web-divider"></div>
     </div>
     <div class="projects-grid">
 
-      <!-- PROJECT 01 — FEATURED -->
       <div class="project-card featured reveal" onclick="openModal('E-Commerce Website')">
-
-        <div class="project-img-wrap">
-          <img src="img-ecommerce.jpg" alt="E-Commerce Website Preview"
-               onerror="this.parentElement.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fas fa-shopping-cart\'></i><span>YASH-MART</span></div>'">
-          <div class="project-img-overlay"></div>
-          <span class="project-img-live">LIVE</span>
-        </div>
-
         <div class="project-card-top">
           <span class="project-num">PROJECT_01</span>
           <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
         </div>
         <div class="project-title">E-Commerce Website</div>
         <p class="project-desc">A mini shopping website with products, cart and checkout flow. Fully responsive with smooth add-to-cart animations.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Bootstrap</span>
-          <span class="tech-tag">JS</span>
-        </div>
+        <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">Bootstrap</span><span class="tech-tag">JS</span></div>
         <div class="project-footer">
-          <a href="https://yashwantchatti005.github.io/Yash-mart/" target="_blank"
-             class="project-link" onclick="event.stopPropagation()">
-            Live Demo <i class="fas fa-arrow-right"></i>
-          </a>
+          <a href="https://yashwantchatti005.github.io/Yash-mart/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Demo <i class="fas fa-arrow-right"></i></a>
           <div class="project-arrow"><i class="fas fa-external-link-alt"></i></div>
         </div>
       </div>
 
-      <!-- PROJECT 02 -->
       <div class="project-card reveal" onclick="openModal('To-Do List')">
-
-        <div class="project-img-wrap">
-          <img src="img-todo.jpg" alt="To-Do List App Preview"
-               onerror="this.parentElement.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fas fa-tasks\'></i><span>TO-DO APP</span></div>'">
-          <div class="project-img-overlay"></div>
-          <span class="project-img-live">LIVE</span>
-        </div>
-
         <div class="project-card-top">
           <span class="project-num">PROJECT_02</span>
           <div class="project-icon"><i class="fas fa-tasks"></i></div>
         </div>
         <div class="project-title">To-Do List App</div>
         <p class="project-desc">A clean and interactive task manager with local storage persistence for seamless experience.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JavaScript</span>
-        </div>
+        <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
         <div class="project-footer">
-          <a href="https://yashwantchatti005.github.io/To-Do-List/" target="_blank"
-             class="project-link" onclick="event.stopPropagation()">
-            Live Demo <i class="fas fa-arrow-right"></i>
-          </a>
+          <a href="https://yashwantchatti005.github.io/To-Do-List/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Demo <i class="fas fa-arrow-right"></i></a>
           <div class="project-arrow"><i class="fas fa-external-link-alt"></i></div>
         </div>
       </div>
 
-      <!-- PROJECT 03 -->
       <div class="project-card reveal" onclick="openModal('Chat Application')">
-
-        <div class="project-img-wrap">
-          <img src="img-chat.jpg" alt="Chat Application Preview"
-               onerror="this.parentElement.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fas fa-comments\'></i><span>CHAT APP</span></div>'">
-          <div class="project-img-overlay"></div>
-          <span class="project-img-live">LIVE</span>
-        </div>
-
         <div class="project-card-top">
           <span class="project-num">PROJECT_03</span>
           <div class="project-icon"><i class="fas fa-comments"></i></div>
         </div>
         <div class="project-title">Chat Application</div>
         <p class="project-desc">Real-time chat app using Firebase for instant messaging between users.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JS</span>
-          <span class="tech-tag">Firebase</span>
-        </div>
+        <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JS</span><span class="tech-tag">Firebase</span></div>
         <div class="project-footer">
-          <a href="https://yashwantchatti005.github.io/chatapplication/" target="_blank"
-             class="project-link" onclick="event.stopPropagation()">
-            Live Demo <i class="fas fa-arrow-right"></i>
-          </a>
+          <a href="https://yashwantchatti005.github.io/chatapplication/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Demo <i class="fas fa-arrow-right"></i></a>
           <div class="project-arrow"><i class="fas fa-external-link-alt"></i></div>
         </div>
       </div>
 
-      <!-- PROJECT 04 -->
       <div class="project-card reveal" onclick="openModal('MyExpense')">
-
-        <div class="project-img-wrap">
-          <img src="img-expense.jpg" alt="MyExpense Tracker Preview"
-               onerror="this.parentElement.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fas fa-chart-pie\'></i><span>EXPENSE TRACKER</span></div>'">
-          <div class="project-img-overlay"></div>
-          <span class="project-img-live">LIVE</span>
-        </div>
-
         <div class="project-card-top">
           <span class="project-num">PROJECT_04</span>
           <div class="project-icon"><i class="fas fa-chart-pie"></i></div>
         </div>
         <div class="project-title">MyExpense Tracker</div>
         <p class="project-desc">Personal expense tracker to record and visualize expenses with interactive charts.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JS</span>
-          <span class="tech-tag">Chart.js</span>
-        </div>
+        <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JS</span><span class="tech-tag">Chart.js</span></div>
         <div class="project-footer">
-          <a href="https://yashwantchatti005.github.io/MyExpense/" target="_blank"
-             class="project-link" onclick="event.stopPropagation()">
-            Live Demo <i class="fas fa-arrow-right"></i>
-          </a>
+          <a href="https://yashwantchatti005.github.io/MyExpense/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Demo <i class="fas fa-arrow-right"></i></a>
           <div class="project-arrow"><i class="fas fa-external-link-alt"></i></div>
         </div>
       </div>
 
-      <!-- PROJECT 05 -->
       <div class="project-card reveal" onclick="openModal('Portfolio')">
-
-        <div class="project-img-wrap">
-          <img src="img-portfolio.jpg" alt="Portfolio Website Preview"
-               onerror="this.parentElement.innerHTML='<div class=\'project-img-placeholder\'><i class=\'fas fa-user-astronaut\'></i><span>THIS SITE</span></div>'">
-          <div class="project-img-overlay"></div>
-          <span class="project-img-live" style="background:rgba(124,58,237,0.15);border-color:rgba(124,58,237,0.3);color:#a78bfa;">YOU'RE HERE</span>
-        </div>
-
         <div class="project-card-top">
           <span class="project-num">PROJECT_05</span>
-          <div class="project-icon"><i class="fas fa-user-astronaut"></i></div>
+          <div class="project-icon"><i class="fas fa-spider"></i></div>
         </div>
         <div class="project-title">Portfolio Website</div>
-        <p class="project-desc">This website itself — fully responsive, animated space theme portfolio with particle effects.</p>
-        <div class="tech-tags">
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JavaScript</span>
-        </div>
+        <p class="project-desc">This site — fully responsive, animated Spider-Man gaming theme portfolio.</p>
+        <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
         <div class="project-footer">
           <span class="project-link">You're here! <i class="fas fa-star"></i></span>
           <div class="project-arrow"><i class="fas fa-map-pin"></i></div>
+        </div>
+      </div>
+
+      <!-- ===== NEW PROJECT_06: College Lost & Found ===== -->
+      <div class="project-card reveal" onclick="openModal('College Lost and Found')">
+        <div class="project-card-top">
+          <span class="project-num">PROJECT_06</span>
+          <div class="project-icon"><i class="fas fa-search"></i></div>
+        </div>
+        <div class="project-title">College Lost &amp; Found</div>
+        <p class="project-desc">A web platform for college students to report and find lost items on campus with ease.</p>
+        <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+        <div class="project-footer">
+          <a href="https://college-lost-and-found-production.up.railway.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Demo <i class="fas fa-arrow-right"></i></a>
+          <div class="project-arrow"><i class="fas fa-external-link-alt"></i></div>
+        </div>
+      </div>
+
+      <!-- ===== NEW PROJECT_07: Google Clone ===== -->
+      <div class="project-card reveal" onclick="openModal('Google Clone')">
+        <div class="project-card-top">
+          <span class="project-num">PROJECT_07</span>
+          <div class="project-icon"><i class="fab fa-google"></i></div>
+        </div>
+        <div class="project-title">Google Clone</div>
+        <p class="project-desc">A responsive React app replicating Google's core UI and search experience with component-based architecture.</p>
+        <div class="tech-tags"><span class="tech-tag">React</span><span class="tech-tag">JavaScript</span><span class="tech-tag">CSS</span></div>
+        <div class="project-footer">
+          <a href="https://google-clone-ds6l.vercel.app/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Demo <i class="fas fa-arrow-right"></i></a>
+          <div class="project-arrow"><i class="fas fa-external-link-alt"></i></div>
+        </div>
+      </div>
+
+      <!-- ===== NEW PROJECT_08: Inventory Logistics Java ===== -->
+      <div class="project-card reveal" onclick="openModal('Inventory Logistics Java')">
+        <div class="project-card-top">
+          <span class="project-num">PROJECT_08</span>
+          <div class="project-icon"><i class="fas fa-boxes"></i></div>
+        </div>
+        <div class="project-title">Inventory Logistics</div>
+        <p class="project-desc">A console-based Java application for managing inventory, processing orders, and tracking order history using OOP principles.</p>
+        <div class="tech-tags"><span class="tech-tag">Java</span><span class="tech-tag">OOP</span><span class="tech-tag">Collections</span></div>
+        <div class="project-footer">
+          <a href="https://github.com/yashwantchatti005/Inventory-Logistics-Java" target="_blank" class="project-link" onclick="event.stopPropagation()">GitHub <i class="fas fa-arrow-right"></i></a>
+          <div class="project-arrow"><i class="fas fa-external-link-alt"></i></div>
+        </div>
+      </div>
+
+      <!-- ===== NEW PROJECT_09: BMW Car Showcase ===== -->
+      <div class="project-card reveal" onclick="openModal('BMW Car Showcase')">
+        <div class="project-card-top">
+          <span class="project-num">PROJECT_09</span>
+          <div class="project-icon"><i class="fas fa-car"></i></div>
+        </div>
+        <div class="project-title">BMW Car Showcase</div>
+        <p class="project-desc">A responsive BMW car showcase webpage with sleek design and smooth animations, hosted on GitHub Pages.</p>
+        <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+        <div class="project-footer">
+          <a href="https://yashwantchatti005.github.io/BMW-car/" target="_blank" class="project-link" onclick="event.stopPropagation()">Live Demo <i class="fas fa-arrow-right"></i></a>
+          <div class="project-arrow"><i class="fas fa-external-link-alt"></i></div>
         </div>
       </div>
 
@@ -597,227 +566,147 @@
         <p class="modal-desc" id="modalDesc"></p>
         <p class="modal-tech" id="modalTech"></p>
         <div class="modal-btns">
-          <a id="modalLink" href="#" target="_blank" class="modal-btn modal-btn-primary">
-            <i class="fas fa-external-link-alt"></i> Live Demo
-          </a>
-          <button class="modal-btn modal-btn-secondary" onclick="closeModal()">
-            <i class="fas fa-times"></i> Close
-          </button>
+          <a id="modalLink" href="#" target="_blank" class="modal-btn modal-btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <button class="modal-btn modal-btn-secondary" onclick="closeModal()"><i class="fas fa-times"></i> Close</button>
         </div>
       </div>
     </div>
 
     <!-- ===== CERTIFICATIONS ===== -->
-<section id="certifications">
-  <div class="section-wrapper">
-    <div class="section-header center reveal">
-      <div class="section-tag">Credentials</div>
-      <h2 class="section-title">My <span class="highlight">Certifications</span></h2>
-      <p class="section-subtitle">Click any card to view the certificate</p>
+    <section id="certifications">
+      <div class="section-wrapper">
+        <div class="section-header center reveal">
+          <div class="section-tag">Credentials</div>
+          <h2 class="section-title">My <span class="highlight">Certifications</span></h2>
+          <div class="web-divider"></div>
+          <p class="section-subtitle">Click any card to view the certificate</p>
+        </div>
+        <div class="cert-grid2">
+
+          <div class="cert-card2 reveal" data-img="WEB.jpg" data-title="Web Development Essentials" data-org="I.T.Vedant · 29th Aug, 2025">
+            <div class="cert-card2-glow"></div>
+            <div class="cert-card2-top">
+              <div class="cert2-icon-wrap" style="background:rgba(230,32,32,.15)"><i class="fas fa-globe" style="color:#ff6060"></i></div>
+              <span class="cert2-badge">✓ Verified</span>
+            </div>
+            <div class="cert2-name">Web Dev Essentials</div>
+            <div class="cert2-org">I.T.Vedant</div>
+            <div class="cert2-date">📅 29th Aug, 2025</div>
+            <div class="cert2-footer"><div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div><span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span></div>
+          </div>
+
+          <div class="cert-card2 reveal" data-img="Springboot.jpg" data-title="Mastering Spring Boot" data-org="I.T.Vedant · 03rd Mar, 2026">
+            <div class="cert-card2-glow"></div>
+            <div class="cert-card2-top">
+              <div class="cert2-icon-wrap" style="background:rgba(74,222,128,.12)"><i class="fas fa-leaf" style="color:#4ade80"></i></div>
+              <span class="cert2-badge">✓ Verified</span>
+            </div>
+            <div class="cert2-name">Mastering Spring Boot</div>
+            <div class="cert2-org">I.T.Vedant</div>
+            <div class="cert2-date">📅 03rd Mar, 2026</div>
+            <div class="cert2-footer"><div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div><span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span></div>
+          </div>
+
+          <div class="cert-card2 reveal" data-img="javascript.jpg" data-title="JavaScript Essentials" data-org="I.T.Vedant · 19th Sep, 2025">
+            <div class="cert-card2-glow"></div>
+            <div class="cert-card2-top">
+              <div class="cert2-icon-wrap" style="background:rgba(245,158,11,.15)"><i class="fab fa-js-square" style="color:#f59e0b"></i></div>
+              <span class="cert2-badge">✓ Verified</span>
+            </div>
+            <div class="cert2-name">JavaScript Essentials</div>
+            <div class="cert2-org">I.T.Vedant</div>
+            <div class="cert2-date">📅 19th Sep, 2025</div>
+            <div class="cert2-footer"><div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div><span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span></div>
+          </div>
+
+          <div class="cert-card2 reveal" data-img="SQL.jpg" data-title="SQL Deep Dive" data-org="I.T.Vedant · 21st Nov, 2025">
+            <div class="cert-card2-glow"></div>
+            <div class="cert-card2-top">
+              <div class="cert2-icon-wrap" style="background:rgba(6,182,212,.15)"><i class="fas fa-database" style="color:#06b6d4"></i></div>
+              <span class="cert2-badge">✓ Verified</span>
+            </div>
+            <div class="cert2-name">SQL Deep Dive</div>
+            <div class="cert2-org">I.T.Vedant</div>
+            <div class="cert2-date">📅 21st Nov, 2025</div>
+            <div class="cert2-footer"><div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div><span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span></div>
+          </div>
+
+          <div class="cert-card2 reveal" data-img="java.jpg" data-title="Java Essentials" data-org="I.T.Vedant · 30th Dec, 2025">
+            <div class="cert-card2-glow"></div>
+            <div class="cert-card2-top">
+              <div class="cert2-icon-wrap" style="background:rgba(249,115,22,.15)"><i class="fab fa-java" style="color:#fb923c"></i></div>
+              <span class="cert2-badge">✓ Verified</span>
+            </div>
+            <div class="cert2-name">Java Essentials</div>
+            <div class="cert2-org">I.T.Vedant</div>
+            <div class="cert2-date">📅 30th Dec, 2025</div>
+            <div class="cert2-footer"><div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div><span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span></div>
+          </div>
+
+          <div class="cert-card2 reveal" data-img="React.jpg" data-title="React Essentials" data-org="I.T.Vedant · 15th Oct, 2025">
+            <div class="cert-card2-glow"></div>
+            <div class="cert-card2-top">
+              <div class="cert2-icon-wrap" style="background:rgba(96,165,250,.15)"><i class="fab fa-react" style="color:#60a5fa"></i></div>
+              <span class="cert2-badge">✓ Verified</span>
+            </div>
+            <div class="cert2-name">React Essentials</div>
+            <div class="cert2-org">I.T.Vedant</div>
+            <div class="cert2-date">📅 15th Oct, 2025</div>
+            <div class="cert2-footer"><div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div><span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span></div>
+          </div>
+
+          <div class="cert-card2 reveal" data-img="Full stack.jpg" data-title="Full Stack Web Dev with Java" data-org="I.T.Vedant · 26th Mar, 2026">
+            <div class="cert-card2-glow"></div>
+            <div class="cert-card2-top">
+              <div class="cert2-icon-wrap" style="background:rgba(230,32,32,.12)"><i class="fas fa-rocket" style="color:#ff6060"></i></div>
+              <span class="cert2-badge">✓ Verified</span>
+            </div>
+            <div class="cert2-name">Full Stack with Java</div>
+            <div class="cert2-org">I.T.Vedant</div>
+            <div class="cert2-date">📅 26th Mar, 2026</div>
+            <div class="cert2-footer"><div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div><span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span></div>
+          </div>
+
+          <div class="cert-card2 reveal" data-img="csc.webp" data-title="Honors Diploma Full Stack" data-org="HDFD Institute · 2023–2024">
+            <div class="cert-card2-glow"></div>
+            <div class="cert-card2-top">
+              <div class="cert2-icon-wrap" style="background:rgba(240,192,64,.15)"><i class="fas fa-graduation-cap" style="color:#f0c040"></i></div>
+              <span class="cert2-badge">✓ Verified</span>
+            </div>
+            <div class="cert2-name">Honors Diploma Full Stack</div>
+            <div class="cert2-org">HDFD Institute</div>
+            <div class="cert2-date">📅 2023–2024</div>
+            <div class="cert2-footer"><div class="cert2-logo"><img src="csc.webp" alt="HDFD"></div><span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span></div>
+          </div>
+
+          <div class="cert-card2 reveal" data-img="images.jpg" data-title="Video Editing" data-org="Independent Learning · 2023">
+            <div class="cert-card2-glow"></div>
+            <div class="cert-card2-top">
+              <div class="cert2-icon-wrap" style="background:rgba(168,85,247,.15)"><i class="fas fa-film" style="color:#a855f7"></i></div>
+              <span class="cert2-badge">✓ Completed</span>
+            </div>
+            <div class="cert2-name">Video Editing</div>
+            <div class="cert2-org">Independent Learning</div>
+            <div class="cert2-date">📅 2023</div>
+            <div class="cert2-footer"><div class="cert2-logo"><img src="images.jpg" alt="VE"></div><span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATE IMAGE MODAL -->
+    <div id="certImgModal" class="certimg-modal">
+      <div class="certimg-box">
+        <button class="certimg-close" id="certImgClose"><i class="fas fa-times"></i></button>
+        <div class="certimg-header">
+          <div class="certimg-title" id="certImgTitle"></div>
+          <div class="certimg-org" id="certImgOrg"></div>
+        </div>
+        <div class="certimg-body"><img id="certImgEl" src="" alt="Certificate"/></div>
+        <div class="certimg-footer"><i class="fas fa-shield-alt"></i> Verified Certificate</div>
+      </div>
     </div>
-
-    <div class="cert-grid2">
-
-      <div class="cert-card2 reveal" 
-           data-img="WEB.jpg"
-           data-title="Web Development Essentials"
-           data-org="I.T.Vedant · 29th Aug, 2025">
-        <div class="cert-card2-glow"></div>
-        <div class="cert-card2-top">
-          <div class="cert2-icon-wrap" style="background:rgba(124,58,237,.15)">
-            <i class="fas fa-globe" style="color:#a855f7"></i>
-          </div>
-          <span class="cert2-badge">✓ Verified</span>
-        </div>
-        <div class="cert2-name">Web Dev Essentials</div>
-        <div class="cert2-org">I.T.Vedant</div>
-        <div class="cert2-date">📅 29th Aug, 2025</div>
-        <div class="cert2-footer">
-          <div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div>
-          <span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="cert-card2 reveal"
-           data-img="Springboot.jpg"
-           data-title="Mastering Spring Boot"
-           data-org="I.T.Vedant · 03rd Mar, 2026">
-        <div class="cert-card2-glow"></div>
-        <div class="cert-card2-top">
-          <div class="cert2-icon-wrap" style="background:rgba(16,185,129,.15)">
-            <i class="fas fa-leaf" style="color:#10b981"></i>
-          </div>
-          <span class="cert2-badge">✓ Verified</span>
-        </div>
-        <div class="cert2-name">Mastering Spring Boot</div>
-        <div class="cert2-org">I.T.Vedant</div>
-        <div class="cert2-date">📅 03rd Mar, 2026</div>
-        <div class="cert2-footer">
-          <div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div>
-          <span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="cert-card2 reveal"
-           data-img="javascript.jpg"
-           data-title="JavaScript Essentials"
-           data-org="I.T.Vedant · 19th Sep, 2025">
-        <div class="cert-card2-glow"></div>
-        <div class="cert-card2-top">
-          <div class="cert2-icon-wrap" style="background:rgba(245,158,11,.15)">
-            <i class="fab fa-js-square" style="color:#f59e0b"></i>
-          </div>
-          <span class="cert2-badge">✓ Verified</span>
-        </div>
-        <div class="cert2-name">JavaScript Essentials</div>
-        <div class="cert2-org">I.T.Vedant</div>
-        <div class="cert2-date">📅 19th Sep, 2025</div>
-        <div class="cert2-footer">
-          <div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div>
-          <span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="cert-card2 reveal"
-           data-img="SQL.jpg"
-           data-title="SQL Deep Dive"
-           data-org="I.T.Vedant · 21st Nov, 2025">
-        <div class="cert-card2-glow"></div>
-        <div class="cert-card2-top">
-          <div class="cert2-icon-wrap" style="background:rgba(6,182,212,.15)">
-            <i class="fas fa-database" style="color:#06b6d4"></i>
-          </div>
-          <span class="cert2-badge">✓ Verified</span>
-        </div>
-        <div class="cert2-name">SQL Deep Dive</div>
-        <div class="cert2-org">I.T.Vedant</div>
-        <div class="cert2-date">📅 21st Nov, 2025</div>
-        <div class="cert2-footer">
-          <div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div>
-          <span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="cert-card2 reveal"
-           data-img="java.jpg"
-           data-title="Java Essentials"
-           data-org="I.T.Vedant · 30th Dec, 2025">
-        <div class="cert-card2-glow"></div>
-        <div class="cert-card2-top">
-          <div class="cert2-icon-wrap" style="background:rgba(239,68,68,.15)">
-            <i class="fab fa-java" style="color:#f87171"></i>
-          </div>
-          <span class="cert2-badge">✓ Verified</span>
-        </div>
-        <div class="cert2-name">Java Essentials</div>
-        <div class="cert2-org">I.T.Vedant</div>
-        <div class="cert2-date">📅 30th Dec, 2025</div>
-        <div class="cert2-footer">
-          <div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div>
-          <span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="cert-card2 reveal"
-           data-img="React.jpg"
-           data-title="React Essentials"
-           data-org="I.T.Vedant · 15th Oct, 2025">
-        <div class="cert-card2-glow"></div>
-        <div class="cert-card2-top">
-          <div class="cert2-icon-wrap" style="background:rgba(59,130,246,.15)">
-            <i class="fab fa-react" style="color:#3b82f6"></i>
-          </div>
-          <span class="cert2-badge">✓ Verified</span>
-        </div>
-        <div class="cert2-name">React Essentials</div>
-        <div class="cert2-org">I.T.Vedant</div>
-        <div class="cert2-date">📅 15th Oct, 2025</div>
-        <div class="cert2-footer">
-          <div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div>
-          <span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="cert-card2 reveal"
-           data-img="Full stack.jpg"
-           data-title="Full Stack Web Dev with Java"
-           data-org="I.T.Vedant · 26th Mar, 2026">
-        <div class="cert-card2-glow"></div>
-        <div class="cert-card2-top">
-          <div class="cert2-icon-wrap" style="background:rgba(236,72,153,.15)">
-            <i class="fas fa-rocket" style="color:#ec4899"></i>
-          </div>
-          <span class="cert2-badge">✓ Verified</span>
-        </div>
-        <div class="cert2-name">Full Stack with Java</div>
-        <div class="cert2-org">I.T.Vedant</div>
-        <div class="cert2-date">📅 26th Mar, 2026</div>
-        <div class="cert2-footer">
-          <div class="cert2-logo"><img src="itv.jpg" alt="ITV"></div>
-          <span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="cert-card2 reveal"
-           data-img="csc.webp"
-           data-title="Honors Diploma Full Stack"
-           data-org="HDFD Institute · 2023–2024">
-        <div class="cert-card2-glow"></div>
-        <div class="cert-card2-top">
-          <div class="cert2-icon-wrap" style="background:rgba(245,158,11,.15)">
-            <i class="fas fa-graduation-cap" style="color:#f59e0b"></i>
-          </div>
-          <span class="cert2-badge">✓ Verified</span>
-        </div>
-        <div class="cert2-name">Honors Diploma Full Stack</div>
-        <div class="cert2-org">HDFD Institute</div>
-        <div class="cert2-date">📅 2023–2024</div>
-        <div class="cert2-footer">
-          <div class="cert2-logo"><img src="csc.webp" alt="HDFD"></div>
-          <span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="cert-card2 reveal"
-           data-img="images.jpg"
-           data-title="Video Editing"
-           data-org="Independent Learning · 2023">
-        <div class="cert-card2-glow"></div>
-        <div class="cert-card2-top">
-          <div class="cert2-icon-wrap" style="background:rgba(124,58,237,.15)">
-            <i class="fas fa-film" style="color:#a855f7"></i>
-          </div>
-          <span class="cert2-badge">✓ Completed</span>
-        </div>
-        <div class="cert2-name">Video Editing</div>
-        <div class="cert2-org">Independent Learning</div>
-        <div class="cert2-date">📅 2023</div>
-        <div class="cert2-footer">
-          <div class="cert2-logo"><img src="images.jpg" alt="VE"></div>
-          <span class="cert2-view">View cert <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATE IMAGE MODAL -->
-<div id="certImgModal" class="certimg-modal">
-  <div class="certimg-box">
-    <button class="certimg-close" id="certImgClose"><i class="fas fa-times"></i></button>
-    <div class="certimg-header">
-      <div class="certimg-title" id="certImgTitle"></div>
-      <div class="certimg-org" id="certImgOrg"></div>
-    </div>
-    <div class="certimg-body">
-      <img id="certImgEl" src="" alt="Certificate" />
-    </div>
-    <div class="certimg-footer">
-      <i class="fas fa-shield-alt"></i> Verified Certificate
-    </div>
-  </div>
-</div>
 
     <!-- ===== ACHIEVEMENTS ===== -->
     <section id="achievements">
@@ -825,28 +714,13 @@
         <div class="section-header center reveal">
           <div class="section-tag">Numbers</div>
           <h2 class="section-title">My <span class="highlight">Achievements</span></h2>
+          <div class="web-divider"></div>
         </div>
         <div class="achievements-wrap">
-          <div class="ach-card reveal">
-            <div class="ach-icon-wrap"><i class="fas fa-rocket"></i></div>
-            <div class="ach-value" data-target="10">0</div>
-            <div class="ach-label">Projects Completed</div>
-          </div>
-          <div class="ach-card reveal">
-            <div class="ach-icon-wrap"><i class="fas fa-briefcase"></i></div>
-            <div class="ach-value" data-target="1">0</div>
-            <div class="ach-label">Internships</div>
-          </div>
-          <div class="ach-card reveal">
-            <div class="ach-icon-wrap"><i class="fas fa-code-branch"></i></div>
-            <div class="ach-value" data-target="100">0</div>
-            <div class="ach-label">GitHub Commits</div>
-          </div>
-          <div class="ach-card reveal">
-            <div class="ach-icon-wrap"><i class="fas fa-certificate"></i></div>
-            <div class="ach-value" data-target="6">0</div>
-            <div class="ach-label">Certifications</div>
-          </div>
+          <div class="ach-card reveal"><div class="ach-icon-wrap"><i class="fas fa-rocket"></i></div><div class="ach-value" data-target="10">0</div><div class="ach-label">Projects Completed</div></div>
+          <div class="ach-card reveal"><div class="ach-icon-wrap"><i class="fas fa-briefcase"></i></div><div class="ach-value" data-target="1">0</div><div class="ach-label">Internships</div></div>
+          <div class="ach-card reveal"><div class="ach-icon-wrap"><i class="fas fa-code-branch"></i></div><div class="ach-value" data-target="100">0</div><div class="ach-label">GitHub Commits</div></div>
+          <div class="ach-card reveal"><div class="ach-icon-wrap"><i class="fas fa-certificate"></i></div><div class="ach-value" data-target="6">0</div><div class="ach-label">Certifications</div></div>
         </div>
       </div>
     </section>
@@ -857,59 +731,36 @@
         <div class="section-header reveal">
           <div class="section-tag">Get In Touch</div>
           <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
+          <div class="web-divider"></div>
           <p class="section-subtitle">Have a project or opportunity? Let's talk!</p>
         </div>
         <div class="contact-grid">
           <div class="contact-info reveal">
             <div>
-              <div class="contact-info-title">Let's build something amazing 🚀</div>
-              <p class="contact-info-desc">
-                I'm currently open to new opportunities, collaborations, 
-                and interesting projects. Feel free to reach out!
-              </p>
+              <div class="contact-info-title">Let's Build Something Amazing 🕷️</div>
+              <p class="contact-info-desc">I'm currently open to new opportunities, collaborations, and interesting projects. Feel free to reach out!</p>
             </div>
             <a href="mailto:yashwantchatti005@gmail.com" class="contact-item">
               <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
-              <div class="contact-item-text">
-                <div class="contact-item-label">Email</div>
-                <div class="contact-item-value">yashwantchatti005@gmail.com</div>
-              </div>
+              <div class="contact-item-text"><div class="contact-item-label">// email</div><div class="contact-item-value">yashwantchatti005@gmail.com</div></div>
             </a>
             <a href="https://github.com/yashwantchatti005" target="_blank" class="contact-item">
               <div class="contact-item-icon"><i class="fab fa-github"></i></div>
-              <div class="contact-item-text">
-                <div class="contact-item-label">GitHub</div>
-                <div class="contact-item-value">yashwantchatti005</div>
-              </div>
+              <div class="contact-item-text"><div class="contact-item-label">// github</div><div class="contact-item-value">yashwantchatti005</div></div>
             </a>
             <a href="https://www.linkedin.com/in/yashwantchatti2005" target="_blank" class="contact-item">
               <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
-              <div class="contact-item-text">
-                <div class="contact-item-label">LinkedIn</div>
-                <div class="contact-item-value">yashwantchatti2005</div>
-              </div>
+              <div class="contact-item-text"><div class="contact-item-label">// linkedin</div><div class="contact-item-value">yashwantchatti2005</div></div>
             </a>
           </div>
-
           <div class="contact-form reveal">
             <form id="contactForm">
               <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">// name</label>
-                  <input type="text" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                  <label class="form-label">// email</label>
-                  <input type="email" id="email" placeholder="Your Email" required>
-                </div>
+                <div class="form-group"><label class="form-label">// name</label><input type="text" id="name" placeholder="Your Name" required></div>
+                <div class="form-group"><label class="form-label">// email</label><input type="email" id="email" placeholder="Your Email" required></div>
               </div>
-              <div class="form-group">
-                <label class="form-label">// message</label>
-                <textarea id="message" rows="5" placeholder="Your Message..." required></textarea>
-              </div>
-              <button type="submit" class="submit-btn">
-                <i class="fas fa-paper-plane"></i> Send Message
-              </button>
+              <div class="form-group"><label class="form-label">// message</label><textarea id="message" rows="5" placeholder="Your Message..." required></textarea></div>
+              <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
             </form>
           </div>
         </div>
@@ -924,19 +775,13 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-left">
-      <div class="footer-logo">&lt;Yashwant /&gt;</div>
-      <p>© 2026 — Built with ❤️ & lots of ☕</p>
+      <div class="footer-logo">⬡ YASHWANT.DEV</div>
+      <p>© 2026 — Built with ❤️ & lots of ☕ | Powered by 🕷️</p>
     </div>
     <div class="footer-socials">
-      <a href="https://github.com/yashwantchatti005" target="_blank" class="social-link">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/yashwantchatti2005" target="_blank" class="social-link">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:yashwantchatti005@gmail.com" class="social-link">
-        <i class="fas fa-envelope"></i>
-      </a>
+      <a href="https://github.com/yashwantchatti005" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/yashwantchatti2005" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:yashwantchatti005@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
     </div>
   </footer>
 
@@ -946,15 +791,10 @@
       <div class="modal-icon"><i class="fas fa-paper-plane"></i></div>
       <h2 class="modal-title" id="emailTitle"></h2>
       <p class="modal-desc" id="emailMessage"></p>
-      <div class="modal-btns">
-        <button class="modal-btn modal-btn-primary" onclick="closeEmailModal()">
-          <i class="fas fa-check"></i> OK
-        </button>
-      </div>
+      <div class="modal-btns"><button class="modal-btn modal-btn-primary" onclick="closeEmailModal()"><i class="fas fa-check"></i> OK</button></div>
     </div>
   </div>
 
-  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </body>
 </html>
