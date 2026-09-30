@@ -234,7 +234,7 @@ section:nth-of-type(even):before{left:auto;right:-180px}
 .pj-info .tags{margin-top:20px}.pj-info .tags span{font-size:10px;padding:6px 10px;border-radius:99px}
 .pj-cta{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:14px 24px;border-radius:14px;background:var(--c);color:#0b0614;font-size:11px;font-weight:900;letter-spacing:.1em;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
 .pj-cta:hover{transform:translateY(-4px);box-shadow:0 18px 50px color-mix(in srgb,var(--c) 45%,transparent)}
-@media(max-width:900px){.pj{grid-template-columns:1fr}.pj-list{position:static;grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}.pj-row{padding:12px 16px}.pj-row i{display:none}.pj-row.on,.pj-row:hover{transform:none}.pj-t{font-size:14px;white-space:nowrap}.pj-art{height:250px}.pj-big{font-size:200px}#projects{padding-top:125px;padding-bottom:125px}#projects .section-head{margin-bottom:55px}}
+@media(max-width:900px){.pj{grid-template-columns:1fr}.pj-list{position:static;grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;overflow-y:hidden;padding-bottom:8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;touch-action:pan-x;overscroll-behavior-x:contain;scroll-snap-type:x proximity}.pj-row{padding:12px 16px}.pj-row i{display:none}.pj-row.on,.pj-row:hover{transform:none}.pj-t{font-size:14px;white-space:nowrap}.pj-art{height:250px}.pj-big{font-size:200px}#projects{padding-top:125px;padding-bottom:125px}#projects .section-head{margin-bottom:55px}}
 @media(max-width:560px){.pj-info{padding:24px 22px 28px}.pj-tile{width:88px;height:88px;font-size:34px}#projects{padding-top:105px;padding-bottom:105px}#projects .section-head h2{font-size:clamp(50px,16vw,78px)}}
 
 /* ===== CERTIFICATES — PROJECT-STYLE BROWSER ===== */
@@ -274,7 +274,7 @@ section:nth-of-type(even):before{left:auto;right:-180px}
 .cj-download{background:linear-gradient(100deg,var(--cyan),var(--lime));color:#071418}
 @media(max-width:560px){.cj-actions{display:grid;grid-template-columns:1fr}.cj-actions .cj-cta{width:100%;justify-content:center}}
 
-@media(max-width:900px){.certgrid{grid-template-columns:1fr}.cj-list{position:static;display:grid;grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}.cj-list::-webkit-scrollbar{display:none}.cj-row{width:max-content;min-width:210px;padding:12px 16px}.cj-row i{display:none}.cj-row.on,.cj-row:hover{transform:none}.cj-t{font-size:14px;white-space:nowrap}.cj-preview{height:300px}}
+@media(max-width:900px){.certgrid{grid-template-columns:1fr}.cj-list{position:static;display:grid;grid-auto-flow:column;grid-auto-columns:max-content;overflow-x:auto;overflow-y:hidden;padding-bottom:8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;touch-action:pan-x;overscroll-behavior-x:contain;scroll-snap-type:x proximity}.cj-list::-webkit-scrollbar{display:none}.cj-row{width:max-content;min-width:210px;padding:12px 16px}.cj-row i{display:none}.cj-row.on,.cj-row:hover{transform:none}.cj-t{font-size:14px;white-space:nowrap}.cj-preview{height:300px}}
 @media(max-width:560px){#certifications{padding-top:105px;padding-bottom:105px}#certifications .section-head{margin-bottom:55px}.certgrid{width:100%;max-width:100%}.cj-list{width:100%;max-width:100%;grid-auto-columns:minmax(190px,76vw);gap:8px}.cj-row{min-width:0;width:100%;max-width:76vw;border-radius:16px}.cj-preview{height:min(78vw,290px);min-height:220px;padding:18px}.cj-preview img{max-width:88%;max-height:100%}.cj-watermark{font-size:170px;bottom:-42px}.cj-info{padding:24px 20px 28px}.cj-info h3{font-size:clamp(27px,9vw,42px);overflow-wrap:anywhere}.cj-org{font-size:11px}.cj-cta{max-width:100%;padding:13px 19px}}
 /* ===== PDF CREDENTIAL CARDS ===== */
 .cj-pdf-card{position:relative;z-index:2;width:min(430px,88%);min-height:245px;padding:30px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(0,0,0,.18));box-shadow:0 28px 80px rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:9px;backdrop-filter:blur(10px)}
@@ -611,6 +611,58 @@ footer{background:linear-gradient(90deg,rgba(109,40,217,.14),rgba(168,85,247,.06
 .pdf-open{color:#e2b94b;background:rgba(226,185,75,.07)}
 #top{border-color:#a855f7;background:rgba(6,4,12,.9);color:#a855f7}
 .toast{background:#070410}.toast b{color:#e2b94b}
+
+/* ===== MOBILE / TABLET SCROLL PERFORMANCE ===== */
+html{
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:auto;
+}
+body{
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:auto;
+  touch-action:pan-y;
+}
+@media (hover:none), (pointer:coarse){
+  html,body{scroll-behavior:smooth!important}
+  .pj-list,
+  .cj-list{
+    touch-action:pan-x;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+    overscroll-behavior-y:auto;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none;
+  }
+  .pj-list::-webkit-scrollbar,
+  .cj-list::-webkit-scrollbar{display:none}
+  .pj-row,
+  .cj-row{touch-action:pan-x;scroll-snap-align:start}
+  /* Keep touch scrolling on the compositor; avoid expensive live effects. */
+  .in-bg span,
+  .b1,.b2,.b3,
+  .in-glow,
+  .in-ring,
+  .marquee-track{will-change:transform}
+  .section-head h2,
+  .in-name,
+  .gre-number{animation:none!important}
+}
+@media (max-width:767px){
+  .nav.scrolled{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(8,5,17,.94)}
+  .nav-links{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  .chip,.pj-tile,.cj-pdf-card,.about-main,.mini,.skill,.languages,.contact{
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+  }
+  section:before{filter:blur(70px);opacity:.10}
+  .in-bg span{filter:blur(55px)}
+  .b1,.b2,.b3{animation:none!important}
+  .pj-panel,.cj-panel,.tcard,.skill,.mini,.about-main,.contact{
+    transform:translateZ(0);
+    backface-visibility:hidden;
+  }
+}
+
 </style>
 
 <style>
@@ -1320,31 +1372,35 @@ img,video,svg,canvas{
 <script>
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 
-/* ===== SMOOTH SCROLL (Lenis) ===== */
+/* ===== PERFORMANCE-FIRST SMOOTH SCROLL =====
+   Desktop: Lenis for buttery wheel scrolling.
+   Phone/tablet: native browser scrolling for maximum FPS and
+   reliable touch gestures. This avoids JS touch-scroll fighting
+   with horizontal project/certificate carousels. */
 let lenis=null;
 let scrollBlurTimer=null;
+const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const touchDevice=matchMedia("(hover:none), (pointer:coarse)").matches;
+const desktopSmooth=!reduceMotion&&!touchDevice;
 
-if(window.Lenis&&!matchMedia("(prefers-reduced-motion: reduce)").matches){
+if(window.Lenis&&desktopSmooth){
  lenis=new Lenis({
-   duration:1.8,
-   easing:t=>1-Math.pow(1-t,4),
+   duration:1.15,
+   easing:t=>1-Math.pow(1-t,3),
    smoothWheel:true,
-   smoothTouch:true,
-   wheelMultiplier:.78,
-   touchMultiplier:1.05,
-   syncTouch:true,
-   syncTouchLerp:.075,
+   smoothTouch:false,
+   wheelMultiplier:.9,
    gestureOrientation:"vertical",
    infinite:false,
    autoRaf:false
  });
 
- lenis.on("scroll",({scroll,velocity,direction})=>{
+ lenis.on("scroll",({scroll,velocity})=>{
    document.documentElement.style.setProperty("--scroll-y",scroll+"px");
    document.documentElement.style.setProperty("--scroll-velocity",Math.min(Math.abs(velocity),3));
    document.body.classList.add("is-scrolling");
    clearTimeout(scrollBlurTimer);
-   scrollBlurTimer=setTimeout(()=>document.body.classList.remove("is-scrolling"),110);
+   scrollBlurTimer=setTimeout(()=>document.body.classList.remove("is-scrolling"),80);
  });
 
  const raf=time=>{
@@ -1352,24 +1408,18 @@ if(window.Lenis&&!matchMedia("(prefers-reduced-motion: reduce)").matches){
    requestAnimationFrame(raf);
  };
  requestAnimationFrame(raf);
-
- document.querySelectorAll('a[href^="#"]').forEach(link=>{
-   link.addEventListener("click",e=>{
-     const target=document.querySelector(link.getAttribute("href"));
-     if(!target)return;
-     e.preventDefault();
-     lenis.scrollTo(target,{
-       offset:-70,
-       duration:1.7,
-       easing:t=>1-Math.pow(1-t,4),
-       lock:true,
-       force:true
-     });
-   });
- });
 }
 
-const startIntro=()=>{$(".intro").classList.add("go");lenis&&lenis.start()};
+const smoothTo=target=>{
+ if(!target)return;
+ if(lenis){
+   lenis.scrollTo(target,{offset:-70,duration:1.05,easing:t=>1-Math.pow(1-t,3),lock:true,force:true});
+ }else{
+   target.scrollIntoView({behavior:"smooth",block:"start"});
+ }
+};
+
+const startIntro=()=>{$(".intro").classList.add("go");if(lenis)lenis.start()};
 setTimeout(startIntro,5000);
 
 /* ===== LOADER ===== */
@@ -1432,9 +1482,6 @@ const certs=[
 ["React.jpg","React Essentials",IT,"15th Oct, 2025","fa-brands fa-react","itv.jpg"],
 ["csc.webp","Honors Diploma Full Stack","HDFD Institute","2023–2024","fa-solid fa-graduation-cap","csc.webp"],
 ["images.jpg","Video Editing","Independent Learning","2023","fa-solid fa-film","images.jpg",null,null,true],
-[null,"GRE General Test","ETS","19th Sep, 2026","fa-solid fa-graduation-cap",null,"GRE.pdf",null,false,"GRE · 170 VERBAL · 170 QUANT · 4.0 AWA"],
-[null,"IELTS Academic","IELTS · British Council / IDP / Cambridge","22nd Aug, 2026","fa-solid fa-language",null,"IELTS.pdf",null,false,"OVERALL 6.0 · L 6.0 · R 6.0 · W 6.0 · S 6.5"],
-[null,"Goethe-Zertifikat A2","Goethe-Institut Chennai","16th Sep, 2026","fa-solid fa-language",null,"German-A2.pdf",null,false,"A2 · 69 / 100 · PASS"],
 ];
 $("#certgrid").innerHTML=`
 <div class="cj-list" id="certlist">
@@ -1479,17 +1526,15 @@ addEventListener("scroll",()=>{
  $$(".nav-links a").forEach(a=>a.classList.toggle("active",a.hash==="#"+cur));
 },{passive:true});
 $("#top").onclick=()=>{
- if(lenis) lenis.scrollTo(0,{duration:1.9,easing:t=>1-Math.pow(1-t,4),lock:true,force:true});
- else scrollTo({top:0,behavior:"smooth"});
+ if(lenis) lenis.scrollTo(0,{duration:1.05,easing:t=>1-Math.pow(1-t,3),lock:true,force:true});
+ else window.scrollTo({top:0,behavior:"smooth"});
 };
 
 document.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener("click",e=>{
  const target=document.querySelector(link.getAttribute("href"));
  if(!target)return;
  e.preventDefault();
- lenis
-   ? lenis.scrollTo(target,{offset:-70,duration:1.7,easing:t=>1-Math.pow(1-t,4),lock:true,force:true})
-   : target.scrollIntoView({behavior:"smooth",block:"start"});
+ smoothTo(target);
 }));
 
 const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");observer.unobserve(e.target)}}),{threshold:.1});
