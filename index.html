@@ -5,6 +5,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="#050409" name="theme-color"/>
 <meta content="Yaswanth Chatti — Full Stack Developer Portfolio" name="description"/>
+<meta name="scroll-optimization" content="native-touch-scroll-v3"/>
 <title>Yaswanth Chatti — Creative Full Stack Developer</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -1234,6 +1235,177 @@ img,video,svg,canvas{
 }
 
 </style>
+
+<style id="super-smooth-performance">
+/* =========================================================
+   SUPER-SMOOTH SCROLL / MOBILE PERFORMANCE LAYER
+   - Native touch scrolling on phone/tablet
+   - No scroll-position JS animation on touch devices
+   - Horizontal project/certificate rails use native momentum
+   - Removes the expensive effects that cause mobile frame drops
+   ========================================================= */
+
+html,body{
+  overscroll-behavior-y:auto;
+  -webkit-text-size-adjust:100%;
+}
+
+@media (hover:none),(pointer:coarse){
+
+  /* Let the browser compositor own vertical page scrolling. */
+  html{
+    scroll-behavior:auto!important;
+    -webkit-overflow-scrolling:touch;
+  }
+  body{
+    scroll-behavior:auto!important;
+    -webkit-overflow-scrolling:touch;
+    touch-action:pan-y;
+  }
+
+  /* Do NOT animate expensive visual layers while the user scrolls. */
+  #cglow,
+  .b1,.b2,.b3,
+  .in-bg span,
+  .in-glow,
+  .in-ring,
+  .chip{
+    animation:none!important;
+    transition:none!important;
+  }
+
+  /* Fixed blur/glow layers are a major mobile GPU cost. */
+  section:before{
+    filter:none!important;
+    opacity:.055!important;
+  }
+  .in-bg span{
+    filter:none!important;
+    opacity:.12!important;
+  }
+  body:before{
+    opacity:.45;
+  }
+
+  /* Disable backdrop filters on every remaining surface. */
+  *,
+  *::before,
+  *::after{
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+  }
+
+  .nav.scrolled{
+    background:rgba(8,5,17,.96)!important;
+  }
+
+  /* Keep cards on their own cheap compositor layer. */
+  .pj-panel,.cj-panel,.pj-row,.cj-row,
+  .tcard,.skill,.mini,.about-main,.contact,
+  .gre-wrap,.gre-card,.stat{
+    contain:paint;
+  }
+
+  /* Horizontal rails: native momentum, no snap fighting the finger. */
+  .pj-list,
+  .cj-list{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    align-items:stretch;
+    gap:8px!important;
+    width:100%!important;
+    max-width:100%!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    -webkit-overflow-scrolling:touch!important;
+    scroll-behavior:auto!important;
+    scroll-snap-type:none!important;
+    overscroll-behavior-x:contain!important;
+    overscroll-behavior-y:auto!important;
+    touch-action:pan-x pan-y!important;
+    scrollbar-width:none!important;
+    will-change:scroll-position;
+  }
+
+  .pj-list::-webkit-scrollbar,
+  .cj-list::-webkit-scrollbar{
+    display:none!important;
+    width:0!important;
+    height:0!important;
+  }
+
+  .pj-row,
+  .cj-row{
+    flex:0 0 auto!important;
+    transform:none!important;
+    scroll-snap-align:none!important;
+    touch-action:pan-x pan-y!important;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  .pj-row{
+    width:max-content!important;
+    min-width:max-content!important;
+    max-width:82vw!important;
+  }
+
+  .cj-row{
+    width:min(76vw,300px)!important;
+    min-width:min(76vw,300px)!important;
+    max-width:76vw!important;
+  }
+
+  /* Don't let the row hover/transition system fight touch scrolling. */
+  .pj-row:hover,
+  .pj-row.on:hover,
+  .cj-row:hover,
+  .cj-row.on:hover{
+    transform:none!important;
+  }
+
+  /* Stop continuous decorative animations on the page. */
+  .marquee-track,
+  .section-head h2,
+  .in-name,
+  .gre-number,
+  .ld-ring:before,
+  .ld-y,
+  .ld-name{
+    animation:none!important;
+  }
+
+  /* Reveal elements use a short compositor-friendly transition only. */
+  .reveal{
+    transition:opacity .35s ease,transform .35s ease!important;
+    will-change:opacity,transform;
+  }
+
+  /* Avoid large animated shadows/glows on touch devices. */
+  .pj-panel,.cj-panel,.gre-wrap,.contact,
+  .about-main,.mini,.skill,.tcard{
+    box-shadow:0 12px 35px rgba(0,0,0,.18)!important;
+  }
+}
+
+/* Phones: keep the horizontal rails easy to grab without stealing
+   the vertical page gesture. */
+@media (max-width:560px){
+  .pj-list,.cj-list{
+    margin-right:-1px;
+    padding-right:12px!important;
+    scrollbar-width:none!important;
+  }
+
+  .pj-row{
+    padding:12px 16px!important;
+  }
+
+  .cj-row{
+    padding:12px 16px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div id="loader">
@@ -1372,51 +1544,48 @@ img,video,svg,canvas{
 <script>
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 
-/* ===== PERFORMANCE-FIRST SMOOTH SCROLL =====
-   Desktop: Lenis for buttery wheel scrolling.
-   Phone/tablet: native browser scrolling for maximum FPS and
-   reliable touch gestures. This avoids JS touch-scroll fighting
-   with horizontal project/certificate carousels. */
+/* ===== SUPER-SMOOTH SCROLL ENGINE =====
+   Touch devices: native browser scrolling only.
+   Desktop: Lenis for smooth mouse-wheel scrolling.
+   The important part is that mobile never has JS competing with
+   the browser's native touch compositor. */
 let lenis=null;
-let scrollBlurTimer=null;
 const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const touchDevice=matchMedia("(hover:none), (pointer:coarse)").matches;
 const desktopSmooth=!reduceMotion&&!touchDevice;
 
 if(window.Lenis&&desktopSmooth){
- lenis=new Lenis({
-   duration:1.15,
-   easing:t=>1-Math.pow(1-t,3),
-   smoothWheel:true,
-   smoothTouch:false,
-   wheelMultiplier:.9,
-   gestureOrientation:"vertical",
-   infinite:false,
-   autoRaf:false
- });
+  lenis=new Lenis({
+    duration:1.0,
+    easing:t=>1-Math.pow(1-t,3),
+    smoothWheel:true,
+    smoothTouch:false,
+    wheelMultiplier:.92,
+    gestureOrientation:"vertical",
+    infinite:false,
+    autoRaf:false
+  });
 
- lenis.on("scroll",({scroll,velocity})=>{
-   document.documentElement.style.setProperty("--scroll-y",scroll+"px");
-   document.documentElement.style.setProperty("--scroll-velocity",Math.min(Math.abs(velocity),3));
-   document.body.classList.add("is-scrolling");
-   clearTimeout(scrollBlurTimer);
-   scrollBlurTimer=setTimeout(()=>document.body.classList.remove("is-scrolling"),80);
- });
-
- const raf=time=>{
-   lenis.raf(time);
-   requestAnimationFrame(raf);
- };
- requestAnimationFrame(raf);
+  const raf=time=>{
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  };
+  requestAnimationFrame(raf);
 }
 
 const smoothTo=target=>{
- if(!target)return;
- if(lenis){
-   lenis.scrollTo(target,{offset:-70,duration:1.05,easing:t=>1-Math.pow(1-t,3),lock:true,force:true});
- }else{
-   target.scrollIntoView({behavior:"smooth",block:"start"});
- }
+  if(!target)return;
+  if(lenis){
+    lenis.scrollTo(target,{
+      offset:-70,
+      duration:.95,
+      easing:t=>1-Math.pow(1-t,3),
+      lock:true,
+      force:true
+    });
+  }else{
+    target.scrollIntoView({behavior:"smooth",block:"start"});
+  }
 };
 
 const startIntro=()=>{$(".intro").classList.add("go");if(lenis)lenis.start()};
@@ -1469,7 +1638,7 @@ const pjCols=["--pink","--cyan","--lime","--orange","--purple"];
 $("#projectgrid").innerHTML='<div class="pj-list">'+projects.map((p,i)=>`<button class="pj-row${i?"":" on"}" style="--c:var(${pjCols[i%5]})"><span class="pj-n">${String(i+1).padStart(2,"0")}</span><span class="pj-t">${p[2]}</span><i class="fa-solid fa-arrow-right"></i></button>`).join("")+'</div><div class="pj-stage">'+projects.map((p,i)=>{const ext=p[6]!=="#home",le=p[7]||"LIVE →",ld=p[8]||"LIVE →",u=ext?p[6].replace(/^https?:\/\//,"").replace(/\/$/,""):"you-are-here";
  return `<article class="pj-panel${i?"":" on"}" style="--c:var(${pjCols[i%5]})"><div class="pj-bar"><i></i><i></i><i></i><span>${u}</span></div><div class="pj-art"><span class="pj-big">${String(i+1).padStart(2,"0")}</span><div class="pj-tile"><i class="${p[1]}"></i></div><div class="pj-lines"><s></s><s></s><s></s></div></div><div class="pj-info"><span class="pj-kind">${p[0]}</span><h3>${p[2]}</h3><p data-en="${p[3]}" data-de="${p[4]}">${p[3]}</p><div class="tags">${p[5].map(t=>`<span>${t}</span>`).join("")}</div><a class="pj-cta" data-en="${le}" data-de="${ld}" href="${p[6]}"${ext?' target="_blank" rel="noopener"':""}>${le}</a></div></article>`}).join("")+'</div>';
 function pjSet(i){$$(".pj-row").forEach((r,k)=>r.classList.toggle("on",k===i));$$(".pj-panel").forEach((r,k)=>r.classList.toggle("on",k===i))}
-$$(".pj-row").forEach((r,i)=>{r.addEventListener("click",()=>pjSet(i));r.addEventListener("focus",()=>pjSet(i));if(matchMedia("(hover:hover)").matches)r.addEventListener("pointerenter",()=>pjSet(i))});
+$$(".pj-row").forEach((r,i)=>{r.addEventListener("click",()=>pjSet(i));if(matchMedia("(hover:hover)").matches)r.addEventListener("pointerenter",()=>pjSet(i))});
 
 /* [img, title, org line, date, icon, thumb, pdf, modal org, completed?] */
 const IT="I.T.Vedant";
@@ -1515,15 +1684,49 @@ $$(".cj-row").forEach((r,i)=>{
 });
 
 /* ===== UI ===== */
+/* ===== LIGHTWEIGHT SCROLL UI =====
+   Never read section.offsetTop on every native scroll event. */
 const nav=$("#nav"),links=$("#links"),menu=$("#menu");
 menu.onclick=()=>links.classList.toggle("open");
 $$(".nav-links a").forEach(a=>a.onclick=()=>links.classList.remove("open"));
+
+const sections=[...$$("section[id]")];
+let sectionTops=[];
+const cacheSectionTops=()=>{
+  sectionTops=sections.map(s=>({id:s.id,top:s.getBoundingClientRect().top+window.scrollY}));
+};
+cacheSectionTops();
+
+let scrollTicking=false;
+const updateScrollUI=()=>{
+  scrollTicking=false;
+  const y=window.scrollY;
+  const h=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+  $("#progress").style.width=(y/h*100)+"%";
+  nav.classList.toggle("scrolled",y>30);
+  $("#top").classList.toggle("show",y>500);
+
+  let cur="";
+  for(let i=0;i<sectionTops.length;i++){
+    if(y+180>=sectionTops[i].top)cur=sectionTops[i].id;
+    else break;
+  }
+  $$(".nav-links a").forEach(a=>a.classList.toggle("active",a.hash==="#"+cur));
+};
+
 addEventListener("scroll",()=>{
- const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
- $("#progress").style.width=(h?y/h*100:0)+"%";
- nav.classList.toggle("scrolled",y>30);$("#top").classList.toggle("show",y>500);
- let cur="";$$("section[id]").forEach(s=>{if(y+180>=s.offsetTop)cur=s.id});
- $$(".nav-links a").forEach(a=>a.classList.toggle("active",a.hash==="#"+cur));
+  if(!scrollTicking){
+    scrollTicking=true;
+    requestAnimationFrame(updateScrollUI);
+  }
+},{passive:true});
+
+addEventListener("resize",()=>{
+  cacheSectionTops();
+  if(!scrollTicking){
+    scrollTicking=true;
+    requestAnimationFrame(updateScrollUI);
+  }
 },{passive:true});
 $("#top").onclick=()=>{
  if(lenis) lenis.scrollTo(0,{duration:1.05,easing:t=>1-Math.pow(1-t,3),lock:true,force:true});
