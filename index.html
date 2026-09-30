@@ -1625,15 +1625,25 @@ $("#skillgrid").innerHTML=skills.map((s,i)=>`<div class="skill reveal d${i%4}"><
 
 const Y="https://yashwantchatti005.github.io/";
 const projects=[
-["01 / WEB","fa-solid fa-cart-shopping","E-Commerce Website","Mini shopping website with products, cart and checkout flow.","Kompakte Shopping-Website mit Produkten, Warenkorb und Checkout-Ablauf.",["HTML","CSS","Bootstrap","JS"],Y+"Yash-mart/"],
-["02 / WEB","fa-solid fa-list-check","To-Do List","Interactive task manager with local storage persistence.","Interaktiver Aufgabenmanager mit Speicherung im Local Storage.",["HTML","CSS","JS"],Y+"To-Do-List/"],
-["03 / REALTIME","fa-solid fa-comments","Chat Application","Real-time messaging experience powered by Firebase.","Echtzeit-Messaging-Anwendung auf Basis von Firebase.",["JS","Firebase","CSS"],Y+"chatapplication/"],
-["04 / DATA","fa-solid fa-chart-pie","MyExpense","Expense tracker with interactive visual charts.","Ausgaben-Tracker mit interaktiven Diagrammen.",["JS","Chart.js","CSS"],Y+"MyExpense/"],
-["05 / PERSONAL","fa-solid fa-wand-magic-sparkles","Portfolio","This site — redesigned as a colorful, animated developer experience.","Dieses Portfolio – als farbenfrohes, animiertes Entwicklererlebnis neu gestaltet.",["HTML","CSS","JS"],"#home","YOU'RE HERE ↑","SIE SIND HIER ↑"],
-["06 / PLATFORM","fa-solid fa-magnifying-glass","College Lost &amp; Found","Platform for students to report and find lost campus items.","Plattform für Studierende zum Melden und Finden verlorener Gegenstände auf dem Campus.",["HTML","CSS","JS"],"https://college-lost-and-found-production.up.railway.app/"],
-["07 / REACT","fa-brands fa-google","Google Clone","Responsive React recreation of Google's core UI and search.","Responsive React-Nachbildung der zentralen Google-Oberfläche und Suche.",["React","JS","CSS"],"https://google-clone-ds6l.vercel.app/"],
-["08 / JAVA","fa-solid fa-boxes-stacked","Inventory Logistics","Java inventory and order management application using OOP.","Java-Anwendung zur Bestands- und Auftragsverwaltung mit OOP.",["Java","OOP","Collections"],"https://github.com/yashwantchatti005/Inventory-Logistics-Java","GITHUB →","GITHUB →"],
-["09 / SHOWCASE","fa-solid fa-car-side","BMW Car Showcase","Responsive automotive showcase with polished animation.","Responsive Fahrzeugpräsentation mit hochwertigen Animationen.",["HTML","CSS","JS"],Y+"BMW-car/"]];
+["01 / CLIENT","fa-solid fa-moon","To the Moon That Listens","Poetry collection website created for author Vijaya Suriya, featuring the book, excerpts, themes, author section, and purchase links.","Website für die Gedichtsammlung der Autorin Vijaya Suriya mit Buch, Auszügen, Themen, Autorenbereich und Kauflinks.",["HTML","CSS","JS"],"https://to-the-moon-that-listens.vercel.app/"],
+
+["02 / WEB","fa-solid fa-cart-shopping","E-Commerce Website","Mini shopping website with products, cart and checkout flow.","Kompakte Shopping-Website mit Produkten, Warenkorb und Checkout-Ablauf.",["HTML","CSS","Bootstrap","JS"],Y+"Yash-mart/"],
+
+["03 / WEB","fa-solid fa-list-check","To-Do List","Interactive task manager with local storage persistence.","Interaktiver Aufgabenmanager mit Speicherung im Local Storage.",["HTML","CSS","JS"],Y+"To-Do-List/"],
+
+["04 / REALTIME","fa-solid fa-comments","Chat Application","Real-time messaging experience powered by Firebase.","Echtzeit-Messaging-Anwendung auf Basis von Firebase.",["JS","Firebase","CSS"],Y+"chatapplication/"],
+
+["05 / DATA","fa-solid fa-chart-pie","MyExpense","Expense tracker with interactive visual charts.","Ausgaben-Tracker mit interaktiven Diagrammen.",["JS","Chart.js","CSS"],Y+"MyExpense/"],
+
+["06 / PERSONAL","fa-solid fa-wand-magic-sparkles","Portfolio","This site — redesigned as a colorful, animated developer experience.","Dieses Portfolio – als farbenfrohes, animiertes Entwicklererlebnis neu gestaltet.",["HTML","CSS","JS"],"#home","YOU'RE HERE ↑","SIE SIND HIER ↑"],
+
+["07 / PLATFORM","fa-solid fa-magnifying-glass","College Lost &amp; Found","Platform for students to report and find lost campus items.","Plattform für Studierende zum Melden und Finden verlorener Gegenstände auf dem Campus.",["HTML","CSS","JS"],"https://college-lost-and-found-production.up.railway.app/"],
+
+["08 / REACT","fa-brands fa-google","Google Clone","Responsive React recreation of Google's core UI and search.","Responsive React-Nachbildung der zentralen Google-Oberfläche und Suche.",["React","JS","CSS"],"https://google-clone-ds6l.vercel.app/"],
+
+["09 / JAVA","fa-solid fa-boxes-stacked","Inventory Logistics","Java inventory and order management application using OOP.","Java-Anwendung zur Bestands- und Auftragsverwaltung mit OOP.",["Java","OOP","Collections"],"https://github.com/yashwantchatti005/Inventory-Logistics-Java","GITHUB →","GITHUB →"],
+
+["10 / SHOWCASE","fa-solid fa-car-side","BMW Car Showcase","Responsive automotive showcase with polished animation.","Responsive Fahrzeugpräsentation mit hochwertigen Animationen.",["HTML","CSS","JS"],Y+"BMW-car/"]];
 const pjCols=["--pink","--cyan","--lime","--orange","--purple"];
 $("#projectgrid").innerHTML='<div class="pj-list">'+projects.map((p,i)=>`<button class="pj-row${i?"":" on"}" style="--c:var(${pjCols[i%5]})"><span class="pj-n">${String(i+1).padStart(2,"0")}</span><span class="pj-t">${p[2]}</span><i class="fa-solid fa-arrow-right"></i></button>`).join("")+'</div><div class="pj-stage">'+projects.map((p,i)=>{const ext=p[6]!=="#home",le=p[7]||"LIVE →",ld=p[8]||"LIVE →",u=ext?p[6].replace(/^https?:\/\//,"").replace(/\/$/,""):"you-are-here";
  return `<article class="pj-panel${i?"":" on"}" style="--c:var(${pjCols[i%5]})"><div class="pj-bar"><i></i><i></i><i></i><span>${u}</span></div><div class="pj-art"><span class="pj-big">${String(i+1).padStart(2,"0")}</span><div class="pj-tile"><i class="${p[1]}"></i></div><div class="pj-lines"><s></s><s></s><s></s></div></div><div class="pj-info"><span class="pj-kind">${p[0]}</span><h3>${p[2]}</h3><p data-en="${p[3]}" data-de="${p[4]}">${p[3]}</p><div class="tags">${p[5].map(t=>`<span>${t}</span>`).join("")}</div><a class="pj-cta" data-en="${le}" data-de="${ld}" href="${p[6]}"${ext?' target="_blank" rel="noopener"':""}>${le}</a></div></article>`}).join("")+'</div>';
