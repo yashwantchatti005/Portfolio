@@ -455,6 +455,38 @@ body{
   }
 }
 
+
+/* Mobile hero role alignment: keep the rotating role and cursor on one clean baseline. */
+.hero-role {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 4px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#typing {
+  display: inline-block;
+  min-width: 0;
+  max-width: calc(100% - 14px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  vertical-align: baseline;
+}
+.hero-role > b {
+  flex: 0 0 auto;
+  line-height: 1;
+}
+@media (max-width: 560px) {
+  .hero-role { font-size: clamp(13px, 4vw, 15px) !important; line-height: 1.4; }
+}
+
 </style>
 
 <style>
@@ -1440,6 +1472,103 @@ section:before{opacity:.07;filter:blur(160px);background:#A100FF}
 .toast{background:#0b0b0b;border-color:#A100FF;border-radius:4px}.toast b{color:#BE82FF}
 </style>
 
+
+<style id="mobile-functionality-fix">
+/* Mobile interaction/layout fixes — appended last to override conflicting rules */
+html { -webkit-text-size-adjust: 100%; }
+body { min-width: 0; width: 100%; }
+img, svg, canvas { max-width: 100%; }
+button, a, input, textarea { touch-action: manipulation; }
+.nav { width: 100%; }
+.nav-inner { min-width: 0; }
+.nav-cta { flex: 0 0 auto; }
+.menu { position: relative; z-index: 2; touch-action: manipulation; }
+.nav-links { z-index: 901; }
+.nav-links.open { pointer-events: auto; }
+@media (max-width: 940px) {
+  .nav-links { pointer-events: none; }
+  .nav-links.open { pointer-events: auto; }
+}
+@media (max-width: 560px) {
+  .nav-inner { gap: 7px !important; }
+  .brand { flex: 1 1 auto; min-width: 0; }
+  .brand-mark { flex: 0 0 34px; width: 34px; height: 34px; }
+  .brand { font-size: 15px; }
+  .nav-cta { gap: 6px; }
+  .lang button { min-width: 27px; padding: 7px 6px; }
+  .menu { flex: 0 0 40px; width: 40px; height: 40px; }
+  .nav-links { top: 70px !important; max-height: calc(100dvh - 90px); overflow-y: auto; overscroll-behavior: contain; }
+  .nav-links a { min-height: 44px; display: flex; align-items: center; }
+  .container { min-width: 0; }
+  .in-wrap, .about-grid, .about-side, .contact, .gre-main, .certgrid, .pj { min-width: 0; }
+  .about-main { padding: 26px 20px; }
+  .about-main h3 { font-size: clamp(28px, 8vw, 38px); }
+  .mini { min-width: 0; padding: 18px 14px; }
+  .mini strong { font-size: clamp(30px, 9vw, 42px); }
+  .tcard { padding: 22px 18px; }
+  .skills { grid-template-columns: minmax(0, 1fr) !important; }
+  .langgrid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat { min-width: 0; padding: 25px 10px; }
+  .stat strong { font-size: clamp(32px, 10vw, 48px); }
+  .pj-list, .cj-list {
+    min-width: 0;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+  .pj-row, .cj-row { flex-shrink: 0; }
+  .pj-stage, .cj-stage, .pj-panel, .cj-panel { min-width: 0; width: 100%; }
+  .pj-info, .cj-info { overflow-wrap: anywhere; }
+  .pj-art { max-width: 100%; }
+  .cj-preview { max-width: 100%; }
+  .cj-preview img { max-width: 100%; }
+  .row { grid-template-columns: minmax(0, 1fr) !important; }
+  .field, .field input, .field textarea { min-width: 0; width: 100%; }
+  .ft-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+  .ft-col, .ft-brand { min-width: 0; }
+  .ft-col a { max-width: 100%; overflow-wrap: anywhere; }
+  .modal { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .modalbox { max-height: calc(100dvh - 20px); overflow-y: auto; }
+}
+@media (max-width: 360px) {
+  .brand { font-size: 13px; }
+  .lang button { padding: 6px 4px; }
+  .in-name { font-size: clamp(42px, 15vw, 56px) !important; }
+  .in-foot { flex-wrap: wrap; }
+  .ft-grid { grid-template-columns: minmax(0, 1fr) !important; }
+}
+/* Mobile fix: keep the FULL STACK / JAVA skills marquee moving.
+   A previous performance rule disabled this animation on touch screens. */
+.marquee { display:block; width:100%; max-width:100%; overflow:hidden; }
+.marquee-track { display:flex; width:max-content; min-width:max-content; animation:marquee 22s linear infinite !important; transform:translate3d(0,0,0); }
+.marquee-item { flex:0 0 auto; white-space:nowrap; }
+@media (max-width:767px) {
+  .marquee-track { animation:marquee 18s linear infinite !important; will-change:transform; }
+  .marquee-item { padding:18px 18px; }
+}
+/* Mobile: keep the circular FULL STACK / JAVA / REACT / SPRING BOOT ring spinning.
+   The performance layer above disables .in-ring on touch screens, so explicitly restore it here. */
+@media (hover:none), (pointer:coarse) {
+  .in-art .in-ring {
+    animation: ldspin 26s linear infinite !important;
+    transition: none !important;
+    transform-origin: center center;
+    will-change: transform;
+  }
+  .in-art .in-ring svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+  .in-art .in-ring textPath { fill: #a99aff; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+</style>
+
 </head>
 <body>
 <div id="loader">
@@ -1668,6 +1797,14 @@ setTimeout(startIntro,5000);
   if(p<1)requestAnimationFrame(step);
   else setTimeout(()=>{l.classList.add("done");document.body.style.overflow="";startIntro();setTimeout(()=>l.remove(),1000)},400)}
  requestAnimationFrame(step);
+ /* Safety net for mobile browsers that suspend animation frames. */
+ setTimeout(()=>{
+   if(!l.isConnected || l.classList.contains("done")) return;
+   l.classList.add("done");
+   document.body.style.overflow="";
+   startIntro();
+   setTimeout(()=>{if(l.isConnected)l.remove()},1000);
+ },7000);
 })();
 addEventListener("pointermove",e=>{const g=$("#cglow");if(g){g.style.left=e.clientX+"px";g.style.top=e.clientY+"px"}});
 
@@ -1765,8 +1902,30 @@ $$(".cj-row").forEach((r,i)=>{
 /* ===== LIGHTWEIGHT SCROLL UI =====
    Never read section.offsetTop on every native scroll event. */
 const nav=$("#nav"),links=$("#links"),menu=$("#menu");
-menu.onclick=()=>links.classList.toggle("open");
-$$(".nav-links a").forEach(a=>a.onclick=()=>links.classList.remove("open"));
+if(menu && links){
+  menu.type="button";
+  menu.setAttribute("aria-controls","links");
+  menu.setAttribute("aria-expanded","false");
+  const closeMenu=()=>{
+    links.classList.remove("open");
+    menu.setAttribute("aria-expanded","false");
+  };
+  menu.addEventListener("click",e=>{
+    e.preventDefault();
+    const isOpen=links.classList.toggle("open");
+    menu.setAttribute("aria-expanded",String(isOpen));
+  });
+  $$(".nav-links a").forEach(a=>a.addEventListener("click",closeMenu));
+  document.addEventListener("click",e=>{
+    if(!nav.contains(e.target)) closeMenu();
+  });
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape") closeMenu();
+  });
+  addEventListener("resize",()=>{
+    if(innerWidth>940) closeMenu();
+  },{passive:true});
+}
 
 const sections=[...$$("section[id]")];
 let sectionTops=[];
@@ -1812,7 +1971,10 @@ $("#top").onclick=()=>{
 };
 
 document.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener("click",e=>{
- const target=document.querySelector(link.getAttribute("href"));
+ const href=link.getAttribute("href");
+ if(!href || href==="#") return;
+ let target=null;
+ try{target=document.querySelector(href)}catch(err){return}
  if(!target)return;
  e.preventDefault();
  smoothTo(target);
